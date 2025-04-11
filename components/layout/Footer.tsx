@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className=" col-span-2 lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">Nae Thit Kyan Mar</h3>
+            <h3 className="text-2xl font-bold mb-4">ORG</h3>
             <p className="text-gray-400 mb-4">
               We are a non-profit organization dedicated to helping those in
               need through various charitable programs and initiatives.
@@ -120,7 +120,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Nae Thit Kyan Mar. All rights reserved.
+            © {new Date().getFullYear()} ORG. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a

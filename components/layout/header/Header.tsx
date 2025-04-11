@@ -70,7 +70,7 @@ export default function Header() {
             className="text-xl font-bold text-gray-800 cursor-pointer"
             onClick={() => router.push("/")}
           >
-            Nae Thit Kyan Mar
+            ORG
           </div>
 
           {/* Desktop Navigation */}
