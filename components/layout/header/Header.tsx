@@ -206,12 +206,14 @@ export default function Header() {
                       ? "text-blue-600"
                       : "text-gray-700"
                   }`}
-                  onClick={() =>
+                  onClick={() => {
                     item.hasDropdown &&
-                    setActiveDropdown(
-                      activeDropdown === item.name ? null : item.name
-                    )
-                  }
+                      setActiveDropdown(
+                        activeDropdown === item.name ? null : item.name
+                      );
+                    !item.hasDropdown && router.push(item.link);
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
