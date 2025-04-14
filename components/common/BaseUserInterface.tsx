@@ -9,6 +9,6 @@ export default function BaseUserInterface({
 }) {
   const { lang } = useLangStore();
   return (
-    <main className={`${lang === "en" ? "" : " text-[14px]"}`}>{children}</main>
+    <main className={`${lang === "en" ? "" : " text-[15px]"}`}>{children}</main>
   );
 }
