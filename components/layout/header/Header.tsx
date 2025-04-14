@@ -1,57 +1,65 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import LangSwitchBtn from "./LangSwitchBtn";
+import { useLangStore } from "@/hooks/useLangStore";
+
+const navItems = [
+  {
+    name: "Home",
+    name_mm: "မူလ",
+    hasDropdown: false,
+    link: "/",
+    //   dropdownItems: ["Home 1", "Home 2", "Home 3"],
+  },
+  {
+    name: "Blogs",
+    name_mm: "ဘလော့များ",
+    hasDropdown: false,
+    link: "/blogs",
+    dropdownItems: ["Blog 1", "Blog 2"],
+  },
+  {
+    name: "Gallery",
+    name_mm: "ပြခန်း",
+    hasDropdown: false,
+    link: "/gallery",
+  },
+  {
+    name: "About",
+    name_mm: "ကျွန်ုပ်တို့အကြောင်း",
+    hasDropdown: false,
+    link: "/about-us",
+  },
+  // {
+  //   name: "Pages",
+  //   hasDropdown: true,
+  //   dropdownItems: ["Page 1", "Page 2", "Page 3"],
+  // },
+  // {
+  //   name: "Donation",
+  //   hasDropdown: true,
+  //   dropdownItems: ["Donate 1", "Donate 2"],
+  // },
+  // {
+  //   name: "Event",
+  //   hasDropdown: true,
+  //   dropdownItems: ["Event 1", "Event 2", "Event 3"],
+  // },
+
+  {
+    name: "Contact",
+    name_mm: "ဆက်သွယ်ရန်",
+    hasDropdown: false,
+    link: "/contact-us",
+  },
+];
 
 export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  const navItems = [
-    {
-      name: "Home",
-      hasDropdown: false,
-      link: "/",
-      //   dropdownItems: ["Home 1", "Home 2", "Home 3"],
-    },
-    {
-      name: "Blog",
-      hasDropdown: false,
-      link: "/blogs",
-      dropdownItems: ["Blog 1", "Blog 2"],
-    },
-    {
-      name: "Gallery",
-      hasDropdown: false,
-      link: "/gallery",
-    },
-    {
-      name: "About",
-      hasDropdown: false,
-      link: "/about-us",
-    },
-    // {
-    //   name: "Pages",
-    //   hasDropdown: true,
-    //   dropdownItems: ["Page 1", "Page 2", "Page 3"],
-    // },
-    // {
-    //   name: "Donation",
-    //   hasDropdown: true,
-    //   dropdownItems: ["Donate 1", "Donate 2"],
-    // },
-    // {
-    //   name: "Event",
-    //   hasDropdown: true,
-    //   dropdownItems: ["Event 1", "Event 2", "Event 3"],
-    // },
-
-    {
-      name: "Contact",
-      hasDropdown: false,
-      link: "/contact-us",
-    },
-  ];
+  const { lang } = useLangStore();
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -70,7 +78,7 @@ export default function Header() {
             className="text-xl font-bold text-gray-800 cursor-pointer"
             onClick={() => router.push("/")}
           >
-            ORG
+            NTKM
           </div>
 
           {/* Desktop Navigation */}
@@ -85,14 +93,14 @@ export default function Header() {
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
-                  className={`flex items-center py-2 text-base ${
+                  className={`flex items-center py-2 ${
                     activeDropdown === item.name
                       ? "text-blue-600"
                       : "text-gray-700 hover:text-blue-600"
                   } transition-colors`}
                   onClick={() => !item.hasDropdown && router.push(item.link)}
                 >
-                  {item.name}
+                  {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
                     <svg
                       className="w-4 h-4 ml-1"
@@ -129,9 +137,7 @@ export default function Header() {
           </nav>
 
           {/* Join Button */}
-          <button className=" hidden md:inline-block ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors">
-            Join Us
-          </button>
+          <LangSwitchBtn isMobile={false} />
 
           {/* Mobile Menu Button */}
           <button
@@ -191,7 +197,7 @@ export default function Header() {
             </button>
           </div>
 
-          <nav className="px-6 py-4">
+          <nav className="px-6">
             {navItems.map((item) => (
               <div key={item.name} className="mb-4">
                 <button
@@ -207,7 +213,7 @@ export default function Header() {
                     )
                   }
                 >
-                  {item.name}
+                  {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
                     <svg
                       className={`w-4 h-4 ml-1 transform ${
@@ -244,9 +250,7 @@ export default function Header() {
               </div>
             ))}
 
-            <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
-              Join Us
-            </button>
+            <LangSwitchBtn isMobile={true} />
           </nav>
         </div>
       </div>
