@@ -107,8 +107,8 @@ export default function ContactUsPage() {
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl">
+          <h1 className="text-4xl md:text-5xl font-normal mb-4">Contact Us</h1>
+          <p className="text-xl max-w-2xl text-center mx-auto">
             We'd love to hear from you! Reach out with questions, partnership
             ideas, or to learn more about our work.
           </p>

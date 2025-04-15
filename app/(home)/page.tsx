@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const services = [
     {
@@ -96,31 +98,42 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative bg-blue-900 text-white">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="container mx-auto px-4 py-32 relative z-10">
-          <div className=" mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-extralight mb-6">
-              Making a Difference in People's Lives
-            </h1>
-            <p className="text-xl mb-8">
-              Join us in our mission to create positive change through
-              charitable giving and community service.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-md font-semibold transition-colors">
-                Donate Now
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 rounded-md font-semibold transition-colors">
-                Learn More
-              </button>
+      <section className="relative h-fit bg-blue-900 text-white">
+        <div className="">
+          <Image
+            src={"/imgs/banner.png"}
+            alt="banner"
+            width={1920}
+            height={600}
+            className=" w-full h-[calc(100vh-100px)] md:h-[600px] lg:h-auto object-cover"
+          />
+        </div>
+        <div className="absolute top-0 inset-0 bg-black opacity-60 h-full"></div>
+        <div className=" absolute top-0 w-full">
+          <div className="  container mx-auto px-4 py-32 relative z-10">
+            <div className=" mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-normal mb-6">
+                Making a Difference in People's Lives
+              </h1>
+              <p className="text-xl mb-8">
+                Join us in our mission to create positive change through
+                charitable giving and community service.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <button className="bg-accent-orange text-white hover:bg-primary-dark px-6 py-3 rounded-md font-semibold transition-colors">
+                  Donate Now
+                </button>
+                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-6 py-3 rounded-md font-semibold transition-colors">
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-blue-800 text-white py-12">
+      {/* <section className="bg-blue-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {stats.map((stat, index) => (
@@ -131,10 +144,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -166,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-base-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Make a Difference?
@@ -175,7 +188,7 @@ export default function Home() {
             Join our community of changemakers today and start creating positive
             impact.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-semibold text-lg transition-colors">
+          <button className="bg-accent-orange text-white hover:bg-primary-dark px-8 py-3 rounded-md font-semibold text-lg transition-colors">
             Get Involved
           </button>
         </div>

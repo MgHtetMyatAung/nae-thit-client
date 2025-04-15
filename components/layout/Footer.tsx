@@ -46,13 +46,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer className="bg-secondary text-base-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className=" col-span-2 lg:col-span-1">
             <h3 className="text-2xl font-bold mb-4">NTKM</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-300 mb-4">
               We are a non-profit organization dedicated to helping those in
               need through various charitable programs and initiatives.
             </p>
@@ -61,7 +61,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                   aria-label={social.name}
                 >
                   <svg
@@ -86,7 +86,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-white transition-colors"
                     >
                       {link}
                     </a>
@@ -106,9 +106,9 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-grow px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-grow px-4 py-2 rounded-md bg-blue-950 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">
+            <button className="bg-accent-orange text-white hover:bg-primary-dark px-6 py-2 rounded-md transition-colors">
               Subscribe
             </button>
           </div>
@@ -119,25 +119,25 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-gray-300 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} NTKM. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a
               href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
             >
               Terms of Service
             </a>
             <a
               href="#"
-              className="text-gray-400 hover:text-white text-sm transition-colors"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
             >
               Cookie Policy
             </a>

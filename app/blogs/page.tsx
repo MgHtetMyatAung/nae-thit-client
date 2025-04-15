@@ -85,7 +85,7 @@ export default function BlogsPage() {
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-normal mb-4">Our Blog</h1>
           <p className="text-xl">
             Stay updated with our latest stories, news, and insights from the
             field.

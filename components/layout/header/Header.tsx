@@ -70,12 +70,12 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div
-            className="text-xl font-bold text-gray-800 cursor-pointer"
+            className="text-xl font-bold text-secondary cursor-pointer"
             onClick={() => router.push("/")}
           >
             NTKM
@@ -93,10 +93,10 @@ export default function Header() {
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
-                  className={`flex items-center py-2 ${
+                  className={`flex items-center py-2 font-normal ${
                     activeDropdown === item.name
                       ? "text-blue-600"
-                      : "text-gray-700 hover:text-blue-600"
+                      : "text-secondary hover:text-blue-600"
                   } transition-colors`}
                   onClick={() => !item.hasDropdown && router.push(item.link)}
                 >

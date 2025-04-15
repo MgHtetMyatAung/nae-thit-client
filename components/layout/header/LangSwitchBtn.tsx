@@ -12,7 +12,7 @@ export default function LangSwitchBtn({ isMobile }: { isMobile: boolean }) {
       onClick={changeLangFunction}
       className={`${
         isMobile ? " w-full" : "hidden min-w-[95px]"
-      }  md:inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors`}
+      }  md:inline-block bg-secondary hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors`}
     >
       {lang === "en" ? "Myanmar" : "အင်္ဂလိပ်"}
     </button>
