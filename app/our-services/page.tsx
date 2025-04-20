@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-export default function GalleryPage() {
+export default function OurServicesPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);

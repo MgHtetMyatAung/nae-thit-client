@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import LangSwitchBtn from "./LangSwitchBtn";
 import { useLangStore } from "@/hooks/useLangStore";
+import Link from "next/link";
 
 const navItems = [
   {
@@ -17,19 +18,23 @@ const navItems = [
     name_mm: "ဘလော့များ",
     hasDropdown: false,
     link: "/blogs",
-    dropdownItems: ["Blog 1", "Blog 2"],
+    // dropdownItems: ["Blog 1", "Blog 2"],
   },
   {
-    name: "Gallery",
-    name_mm: "ပြခန်း",
+    name: "Our Services",
+    name_mm: "ဝန်ဆောင်မှုများ",
     hasDropdown: false,
-    link: "/gallery",
+    link: "/our-services",
   },
   {
     name: "About",
     name_mm: "ကျွန်ုပ်တို့အကြောင်း",
-    hasDropdown: false,
+    hasDropdown: true,
     link: "/about-us",
+    dropdownItems: [
+      { name: "About Us", link: "/about-us" },
+      { name: "Our Team", link: "/about-us#our-team" },
+    ],
   },
   // {
   //   name: "Pages",
@@ -71,29 +76,29 @@ export default function Header() {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-md">
-      <div className="container mx-auto py-4">
-        <div className="flex justify-between items-center">
+      <div className="container mx-auto ">
+        <div className="flex justify-between items-center h-[70px]">
           {/* Logo */}
           <div
-            className="text-xl font-bold text-secondary cursor-pointer"
+            className="text-xl font-bold text-secondary cursor-pointer py-4"
             onClick={() => router.push("/")}
           >
             NTKM
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
+          <nav className="hidden md:flex items-center space-x-10 h-full">
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="relative"
+                className="relative h-full py-6 group"
                 onMouseEnter={() =>
                   item.hasDropdown && setActiveDropdown(item.name)
                 }
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
-                  className={`flex items-center py-2 font-normal ${
+                  className={`  flex items-center font-normal ${
                     activeDropdown === item.name
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
@@ -103,7 +108,8 @@ export default function Header() {
                   {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
                     <svg
-                      className="w-4 h-4 ml-1"
+                      className="w-4 h-4 ml-2 group-hover:rotate-180
+                      transition-transform duration-200"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -120,15 +126,15 @@ export default function Header() {
                 </button>
 
                 {item.hasDropdown && activeDropdown === item.name && (
-                  <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
+                  <div className="absolute left-0 top-[70px] w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
                     {item?.dropdownItems?.map((dropdownItem) => (
-                      <a
-                        key={dropdownItem}
-                        href="#"
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50"
+                      <Link
+                        key={dropdownItem.link}
+                        href={`${dropdownItem.link}`}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-secondary"
                       >
-                        {dropdownItem}
-                      </a>
+                        {dropdownItem.name}
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -137,7 +143,9 @@ export default function Header() {
           </nav>
 
           {/* Join Button */}
-          <LangSwitchBtn isMobile={false} />
+          <div className="py-4">
+            <LangSwitchBtn isMobile={false} />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -212,7 +220,7 @@ export default function Header() {
                         activeDropdown === item.name ? null : item.name
                       );
                     !item.hasDropdown && router.push(item.link);
-                    setMobileMenuOpen(false);
+                    !item.hasDropdown && setMobileMenuOpen(false);
                   }}
                 >
                   {lang === "en" ? item.name : item.name_mm}
@@ -240,11 +248,15 @@ export default function Header() {
                   <div className="pl-4 mt-2 space-y-2">
                     {item?.dropdownItems?.map((dropdownItem) => (
                       <a
-                        key={dropdownItem}
+                        key={dropdownItem.link}
                         href="#"
                         className="block py-1 text-gray-600 hover:text-blue-600"
+                        onClick={() => {
+                          router.push(dropdownItem.link);
+                          setMobileMenuOpen(false);
+                        }}
                       >
-                        {dropdownItem}
+                        {dropdownItem.name}
                       </a>
                     ))}
                   </div>

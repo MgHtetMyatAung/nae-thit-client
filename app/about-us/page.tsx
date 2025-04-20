@@ -159,7 +159,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" id="our-team">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Meet Our Team

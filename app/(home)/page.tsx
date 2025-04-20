@@ -1,3 +1,5 @@
+import FacilitiesSlider from "@/components/pages/home/Facilities";
+import TestimonialsSlider from "@/components/pages/home/Testimonial";
 import Image from "next/image";
 
 export default function Home() {
@@ -98,13 +100,14 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-fit bg-blue-900 text-white">
+      {/* <section className="relative h-fit bg-blue-900 text-white">
         <div className="">
           <Image
             src={"/imgs/banner.png"}
             alt="banner"
             width={1920}
             height={600}
+            priority={true}
             className=" w-full h-[calc(100vh-100px)] md:h-[600px] lg:h-auto object-cover"
           />
         </div>
@@ -130,6 +133,92 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section> */}
+
+      <section className="relative">
+        <div className="absolute inset-0">
+          <img
+            className="w-full h-full object-cover"
+            src="/imgs/banner.png"
+            alt="Healthcare background"
+          />
+          <div className="absolute inset-0 bg-secondary opacity-70"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl drop-shadow-md">
+              Providing Quality Healthcare with Affordable Solutions
+            </h1>
+            <p className="mt-6 max-w-2xl mx-auto text-xl text-white drop-shadow-md">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Quibusdam maxime praesentium Why did the scarecrow win an award?
+              Because he was outstanding in his field. Lorem ipsum
+            </p>
+            <div className="mt-8 flex justify-center space-x-4">
+              <button className="bg-accent-orange text-white hover:bg-primary-dark px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
+                Book Now
+              </button>
+              <button className="px-8 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-secondary md:py-4 md:text-lg md:px-10 transition duration-300">
+                Explore More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className=" container py-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="bg-gray-200 rounded-lg h-64"></div>
+          <div>
+            <h2 className=" text-lg md:text-3xl font-bold text-gray-900">
+              Background
+            </h2>
+            <p className="text-sm text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Doloremque assumenda incidunt...
+            </p>
+            <button className="text-yellow-400 mt-4 text-sm">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Enterprise Section */}
+      <section className=" container pb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className=" order-2 md:order-1">
+            <h3 className="text-lg md:text-3xl font-bold text-gray-900">
+              What is Social Enterprise?
+            </h3>
+            <p className="text-sm text-gray-700">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+            </p>
+            <button className="text-yellow-400 mt-4 text-sm">Read More</button>
+          </div>
+          <div className="bg-gray-300 rounded-lg h-48 order-1 md:order-2"></div>
+        </div>
+      </section>
+
+      {/* Statistics */}
+      <section className="bg-primary-dark py-6 ">
+        <div className=" container flex justify-between text-white text-center">
+          <div>
+            <p className="text-2xl font-bold">4</p>
+            <p className="text-sm">Years of Service</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">3</p>
+            <p className="text-sm">Clinics & Pharmacies</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">48</p>
+            <p className="text-sm">Team Members</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">181,353</p>
+            <p className="text-sm">Catchment Population</p>
+          </div>
+        </div>
       </section>
 
       {/* Stats Section */}
@@ -146,31 +235,51 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* Services Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We offer various ways for you to get involved and make an impact
-              in your community.
-            </p>
-          </div>
+      <FacilitiesSlider />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+      {/* Services Section */}
+      <section className=" py-10 bg-gray-50">
+        <div className=" container">
+          <div className="relative py-8 max-w-[200px] mx-auto">
+            <div
+              className="absolute inset-0 flex items-center"
+              aria-hidden="true"
+            >
+              <div className="w-full border-t-2 border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-white px-4 font-medium tracking-wider">
+                Our Services
+              </span>
+            </div>
+          </div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-14 text-center">
+            Explore Our <span className="text-yellow-400">Services</span>
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              "Consultation",
+              "Telehealth",
+              "ECG and USG",
+              "Pharmacy",
+              "Vaccination",
+              "Subsidized health care",
+            ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className={`group rounded-lg border px-6 py-10 text-center hover:bg-primary hover:text-white`}
               >
-                <div className="flex justify-center mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-center mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-center">
-                  {service.description}
+                <Image
+                  src={"/icons/building.png"}
+                  alt={service}
+                  width={30}
+                  height={30}
+                  className="mx-auto mb-4"
+                />
+                <h3 className="font-semibold text-lg">{service}</h3>
+                <p className=" text-gray-500 group-hover:text-gray-100">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Animi, adipisci.
                 </p>
               </div>
             ))}
@@ -178,21 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-base-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Make a Difference?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join our community of changemakers today and start creating positive
-            impact.
-          </p>
-          <button className="bg-accent-orange text-white hover:bg-primary-dark px-8 py-3 rounded-md font-semibold text-lg transition-colors">
-            Get Involved
-          </button>
-        </div>
-      </section>
+      <TestimonialsSlider />
     </div>
   );
 }
