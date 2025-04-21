@@ -169,14 +169,26 @@ export default function Home() {
       {/* About Us Section */}
       <section className=" container py-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="bg-gray-200 rounded-lg h-64"></div>
+          <div className="bg-gray-200 rounded-lg">
+            <Image
+              src={"/imgs/background.jpg"}
+              alt="About Us"
+              width={800}
+              height={600}
+              priority={true}
+              className="w-full max-h-[400px] object-cover rounded-lg"
+            />
+          </div>
           <div>
-            <h2 className=" text-lg md:text-3xl font-bold text-gray-900">
+            <h2 className=" text-lg md:text-3xl mb-3 font-bold text-gray-900">
               Background
             </h2>
             <p className="text-sm text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Doloremque assumenda incidunt...
+              Blanditiis quae, perspiciatis maxime labore, cum aspernatur
+              tempora molestias autem atque hic dolores aliquam nisi architecto
+              veniam tempore corporis quis laudantium. Qui, neque. Rem mollitia
+              consequuntur culpa...
             </p>
             <button className="text-yellow-400 mt-4 text-sm">Read More</button>
           </div>
@@ -187,15 +199,28 @@ export default function Home() {
       <section className=" container pb-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className=" order-2 md:order-1">
-            <h3 className="text-lg md:text-3xl font-bold text-gray-900">
+            <h3 className="text-lg md:text-3xl mb-3 font-bold text-gray-900">
               What is Social Enterprise?
             </h3>
             <p className="text-sm text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+              accusantium voluptatibus, perferendis porro error a, impedit, sed
+              laudantium nisi incidunt minima! Illo, vel quae consequuntur ab
+              error eum culpa soluta enim, ullam hic a dignissimos saepe odio,
+              vitae quibusdam dicta?...
             </p>
             <button className="text-yellow-400 mt-4 text-sm">Read More</button>
           </div>
-          <div className="bg-gray-300 rounded-lg h-48 order-1 md:order-2"></div>
+          <div className="bg-gray-300 rounded-lg order-1 md:order-2">
+            <Image
+              src={"/imgs/social.jpg"}
+              alt="About Us"
+              width={800}
+              height={600}
+              priority={true}
+              className="w-full max-h-[400px] object-cover rounded-lg"
+            />
+          </div>
         </div>
       </section>
 

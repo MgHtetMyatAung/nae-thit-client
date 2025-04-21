@@ -98,8 +98,8 @@ export default function BlogsPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar */}
-            <div className="lg:w-1/4">
-              <div className="bg-white p-6 rounded-lg shadow-md sticky top-6">
+            <div className="lg:w-1/4 ">
+              <div className="bg-white p-6 rounded-lg shadow-md sticky top-[110px]">
                 <h3 className="text-xl font-bold mb-4">Categories</h3>
                 <ul className="space-y-2">
                   {categories.map((category, index) => (
@@ -137,7 +137,7 @@ export default function BlogsPage() {
                   ))}
                 </div>
 
-                <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+                {/* <div className="mt-8 p-4 bg-blue-50 rounded-lg">
                   <h4 className="font-semibold mb-2">
                     Subscribe to Newsletter
                   </h4>
@@ -157,7 +157,7 @@ export default function BlogsPage() {
                       Subscribe
                     </button>
                   </form>
-                </div>
+                </div> */}
               </div>
             </div>
 

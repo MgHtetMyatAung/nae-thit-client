@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <h4 className="text-lg font-semibold mb-4">
             Subscribe to our Newsletter
           </h4>
@@ -112,36 +112,16 @@ export default function Footer() {
               Subscribe
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-6"></div>
+        <div className="border-t border-primary my-6"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className=" text-center">
           <p className="text-gray-300 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} NTKM. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Cookie Policy
-            </a>
-          </div>
         </div>
       </div>
     </footer>
