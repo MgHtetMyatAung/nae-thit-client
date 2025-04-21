@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function OurServicesPage() {
@@ -116,141 +117,68 @@ export default function OurServicesPage() {
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-normal mb-4">Our Gallery</h1>
+          <h1 className="text-4xl md:text-5xl font-normal mb-4">
+            Our Services
+          </h1>
           <p className="text-xl">
-            Visual stories of impact, community, and hope from our charitable
-            work
+            We are dedicated to making a positive impact in our community
+            through various services.
           </p>
         </div>
       </section>
 
-      {/* Gallery Content */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          {/* Filter Controls */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {galleryFilters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-full transition-colors ${
-                  activeFilter === filter
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredImages.map((img, index) => (
+      <section className=" py-10 bg-gray-50">
+        <div className=" container">
+          {/* <div className="relative py-8 max-w-[200px] mx-auto">
+            <div
+              className="absolute inset-0 flex items-center"
+              aria-hidden="true"
+            >
+              <div className="w-full border-t-2 border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-white px-4 font-medium tracking-wider">
+                Our Services
+              </span>
+            </div>
+          </div> */}
+          <h3 className="text-3xl font-bold text-gray-900 mb-14 text-center">
+            Explore Our <span className="text-yellow-400">Services</span>
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              "Consultation",
+              "Telehealth",
+              "ECG and USG",
+              "Pharmacy",
+              "Vaccination",
+              "Subsidized health care",
+              "Medical check-up",
+              "Dental care",
+              "Eye care",
+              "Laboratory",
+            ].map((service, index) => (
               <div
-                key={img.id}
-                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all cursor-pointer"
-                onClick={() => openLightbox(index)}
+                key={index}
+                className={`group rounded-lg border px-6 py-10 text-center hover:bg-primary hover:text-white`}
               >
-                <img
-                  src={img.image}
-                  alt={img.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                <Image
+                  src={"/icons/building.png"}
+                  alt={service}
+                  width={30}
+                  height={30}
+                  className="mx-auto mb-4 filter group-hover:brightness-[5]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div>
-                    <h3 className="text-white font-bold text-lg">
-                      {img.title}
-                    </h3>
-                    <p className="text-gray-200 text-sm">{img.description}</p>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs font-medium px-2 py-1 rounded">
-                  {img.category}
-                </div>
+                <h3 className="font-semibold text-lg">{service}</h3>
+                <p className=" text-gray-500 group-hover:text-gray-100">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Animi, adipisci.
+                </p>
               </div>
             ))}
           </div>
-
-          {/* Load More Button */}
-          {filteredImages.length > 6 && (
-            <div className="mt-12 text-center">
-              <button className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition-colors">
-                Load More
-              </button>
-            </div>
-          )}
         </div>
       </section>
-
-      {/* Lightbox Modal */}
-      {lightboxOpen && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl"
-          >
-            &times;
-          </button>
-
-          <div className="relative max-w-4xl w-full">
-            <img
-              src={filteredImages[currentImage].image}
-              alt={filteredImages[currentImage].title}
-              className="w-full max-h-[80vh] object-contain"
-            />
-
-            <div className="bg-white p-4">
-              <h3 className="text-xl font-bold">
-                {filteredImages[currentImage].title}
-              </h3>
-              <p className="text-gray-600">
-                {filteredImages[currentImage].description}
-              </p>
-            </div>
-
-            <button
-              onClick={() => navigateLightbox("prev")}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-
-            <button
-              onClick={() => navigateLightbox("next")}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

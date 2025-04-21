@@ -1,6 +1,7 @@
 import FacilitiesSlider from "@/components/pages/home/Facilities";
 import TestimonialsSlider from "@/components/pages/home/Testimonial";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const services = [
@@ -185,10 +186,11 @@ export default function Home() {
             </h2>
             <p className="text-sm text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis quae, perspiciatis maxime labore, cum aspernatur
-              tempora molestias autem atque hic dolores aliquam nisi architecto
-              veniam tempore corporis quis laudantium. Qui, neque. Rem mollitia
-              consequuntur culpa...
+              Blanditiis quae, consectetur adipisicing elit. Blanditiis quae,
+              consectetur adipisicing elit. Blanditiis quae, perspiciatis maxime
+              labore, cum aspernatur tempora molestias autem atque hic dolores
+              aliquam nisi architecto veniam tempore corporis quis laudantium.
+              Qui, neque. Rem mollitia consequuntur culpa...
             </p>
             <button className="text-yellow-400 mt-4 text-sm">Read More</button>
           </div>
@@ -204,10 +206,12 @@ export default function Home() {
             </h3>
             <p className="text-sm text-gray-700">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-              accusantium voluptatibus, perferendis porro error a, impedit, sed
-              laudantium nisi incidunt minima! Illo, vel quae consequuntur ab
-              error eum culpa soluta enim, ullam hic a dignissimos saepe odio,
-              vitae quibusdam dicta?...
+              accusantium voluptatibus, consectetur adipisicing elit. Blanditiis
+              quae, consectetur adipisicing elit. Blanditiis quae, consectetur
+              adipisicing elit. Blanditiis quae, perferendis porro error a,
+              impedit, sed laudantium nisi incidunt minima! Illo, vel quae
+              consequuntur ab error eum culpa soluta enim, ullam hic a
+              dignissimos saepe odio, vitae quibusdam dicta?...
             </p>
             <button className="text-yellow-400 mt-4 text-sm">Read More</button>
           </div>
@@ -299,7 +303,7 @@ export default function Home() {
                   alt={service}
                   width={30}
                   height={30}
-                  className="mx-auto mb-4"
+                  className="mx-auto mb-4 filter group-hover:brightness-[5]"
                 />
                 <h3 className="font-semibold text-lg">{service}</h3>
                 <p className=" text-gray-500 group-hover:text-gray-100">
@@ -309,6 +313,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="container mx-auto text-center mt-7">
+          <Link
+            href={"/our-services"}
+            className=" text-secondary font-medium underline"
+          >
+            See more
+          </Link>
         </div>
       </section>
 

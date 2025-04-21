@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function BlogsPage() {
@@ -180,18 +181,18 @@ export default function BlogsPage() {
                         <span className="mx-2">•</span>
                         <span>{post.readTime}</span>
                       </div>
-                      <a
-                        href="#"
+                      <Link
+                        href={`/blogs/${post.id}`}
                         className="inline-block bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded mb-3"
                       >
                         {post.category}
-                      </a>
+                      </Link>
                       <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
-                        <a href="#">{post.title}</a>
+                        <Link href={`/blogs/${post.id}`}>{post.title}</Link>
                       </h2>
                       <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                      <a
-                        href="#"
+                      <Link
+                        href={`/blogs/${post.id}`}
                         className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
                       >
                         Read More
@@ -209,7 +210,7 @@ export default function BlogsPage() {
                             d="M14 5l7 7m0 0l-7 7m7-7H3"
                           />
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </article>
                 ))}

@@ -3,10 +3,17 @@ import React from "react";
 
 export default function BlogDetailPage({ params }: { params: { id: string } }) {
   return (
-    <div>
+    <div className=" container">
       <div className=" max-w-[500px] mx-auto py-10">
-        <h1 className="text-3xl font-bold">Blog Detail Page</h1>
-        <div className=" my-6">
+        <h1 className=" text-xl md:text-3xl font-bold">Blog Detail Page</h1>
+        <div className=" mt-3">
+          <div className="flex space-x-2 text-sm text-gray-500">
+            <time dateTime="2023-10-15">2.5.2025</time>
+            <span>•</span>
+            <span>4 mins read</span>
+          </div>
+        </div>
+        <div className=" mb-5 mt-3">
           <Image
             src={"/imgs/clinic.jpg"}
             alt="clinic"

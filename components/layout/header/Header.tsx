@@ -32,8 +32,8 @@ const navItems = [
     hasDropdown: true,
     link: "/about-us",
     dropdownItems: [
-      { name: "About Us", link: "/about-us" },
-      { name: "Our Team", link: "/about-us#our-team" },
+      { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
+      { name: "Our Team", name_mm: "အဖွဲ့ဝင်များ", link: "/about-us#our-team" },
     ],
   },
   // {
@@ -133,7 +133,9 @@ export default function Header() {
                         href={`${dropdownItem.link}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-secondary"
                       >
-                        {dropdownItem.name}
+                        {lang === "en"
+                          ? dropdownItem.name
+                          : dropdownItem.name_mm}
                       </Link>
                     ))}
                   </div>
@@ -256,7 +258,9 @@ export default function Header() {
                           setMobileMenuOpen(false);
                         }}
                       >
-                        {dropdownItem.name}
+                        {lang === "en"
+                          ? dropdownItem.name
+                          : dropdownItem.name_mm}
                       </a>
                     ))}
                   </div>
