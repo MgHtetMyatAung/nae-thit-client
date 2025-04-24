@@ -1,63 +1,64 @@
+import Image from "next/image";
 import React from "react";
 
 export default function AboutUsPage() {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "Founder & CEO",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
+      name: "Dr. Kaung Myat Sithu",
+      role: "General Manager",
+      image: "/profile/dr_kaung.png",
       bio: "With over 15 years in nonprofit leadership, Sarah founded Charities in 2010 to create systemic change.",
     },
     {
-      name: "Michael Chen",
-      role: "Program Director",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
+      name: "Dr. Zan Lin Tun",
+      role: "Medical Operation Manager",
+      image: "/profile/dr_zan.png",
       bio: "Michael oversees all charitable programs with expertise in community development.",
     },
     {
-      name: "Aisha Williams",
-      role: "Volunteer Coordinator",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
+      name: "Mrs. Yin Yin Aung",
+      role: "Finance Manager",
+      image: "/profile/mr_yin.png",
       bio: "Aisha manages our 1,200+ volunteers and community partnerships.",
     },
     {
-      name: "David Rodriguez",
-      role: "Finance Director",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80",
+      name: "Dr. Okka Minn",
+      role: "Strategic Product Manager",
+      image: "/profile/dr_okka.png",
       bio: "David ensures financial transparency and maximizes donor impact.",
     },
   ];
 
   const values = [
     {
-      title: "Compassion",
+      title: "Sustainability",
       icon: "❤️",
-      description: "We lead with empathy in all our interactions and programs.",
+      description:
+        "We build a sustainable healthcare model that ensures long-term well-being through responsible resource management and strategic partnerships.",
     },
     {
-      title: "Integrity",
+      title: "Learning",
       icon: "🔒",
-      description: "We maintain the highest ethical standards in our work.",
+      description:
+        "We foster a culture of continuous learning, empowering our team to stay at the forefront of medical advancements for better patient care.",
     },
     {
-      title: "Impact",
+      title: "Innovation",
       icon: "✨",
       description:
         "We measure success by lives changed, not just dollars spent.",
     },
     {
-      title: "Community",
+      title: "Leadership",
       icon: "👥",
-      description: "We believe in the power of collective action.",
+      description:
+        "We lead with integrity, setting high standards and inspiring excellence through transparency, vision, and decisive action.",
     },
     {
-      title: "Innovation",
+      title: "Collaboration/ Teamwork",
       icon: "💡",
-      description: "We constantly seek better solutions to social challenges.",
+      description:
+        "We work seamlessly across teams, partners, and communities, leveraging collective expertise to deliver impactful healthcare solutions.",
     },
   ];
 
@@ -84,23 +85,21 @@ export default function AboutUsPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="space-y-6 text-lg text-gray-700">
               <p>
-                Founded in 2010, Charities began as a small community initiative
-                in response to local needs. What started as a neighborhood food
-                drive has grown into a nationally recognized nonprofit
-                organization serving over 500,000 people annually.
+                In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise,
+                was established and provides quality healthcare services to the
+                community by forming Nae Thit Kyan Mar.
               </p>
               <p>
-                Our journey has been marked by the collective effort of
-                thousands of volunteers, donors, and community partners who
-                believe in our vision of a more equitable society. Each year, we
-                expand our programs based on community needs and impact
-                assessments.
+                Nae Thit Kyan Mar is a chain of clinics that fill the gap in the
+                health services needed in the community by giving quality
+                healthcare services at subsidized prices in innovative ways. We
+                provide quality healthcare services with affordable prices to
+                the community in urban and peri-urban areas.
               </p>
               <p>
-                Today, we operate in 12 states with 35 dedicated staff members
-                and a network of 1,200+ volunteers. Our financials are publicly
-                available, with 87% of every dollar going directly to program
-                services.
+                The aim of Nae Thit Kyan Mar Clinics is to provide value, not
+                only to the patients but also to the community, changing lives
+                and better social impact.
               </p>
             </div>
           </div>
@@ -117,9 +116,9 @@ export default function AboutUsPage() {
                 Our Vision
               </h3>
               <p className="text-gray-700">
-                A world where every individual has access to basic needs,
-                opportunities for growth, and the support of a caring
-                community—regardless of their circumstances.
+                To be the leading self-sustainable healthcare social enterprise
+                in Myanmar, transforming lives through innovative and
+                comprehensive healthcare solutions
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
@@ -162,23 +161,27 @@ export default function AboutUsPage() {
       <section className="py-16 bg-gray-50" id="our-team">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Meet Our Team
+            Meet Our Leadership
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-blue-600 mb-3">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                  <p className="text-secondary font-medium my-2">
+                    {member.role}
+                  </p>
+                  {/* <p className="text-gray-600">{member.bio}</p> */}
                 </div>
               </div>
             ))}
@@ -187,7 +190,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-blue-600 text-white">
+      {/* <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Movement</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -203,7 +206,7 @@ export default function AboutUsPage() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

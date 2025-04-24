@@ -217,7 +217,7 @@ export default function Home() {
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
             <Image
-              src={"/imgs/social.jpg"}
+              src={"/imgs/special_heathcare.jpg"}
               alt="About Us"
               width={800}
               height={600}
@@ -287,12 +287,12 @@ export default function Home() {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Consultation",
-              "Telehealth",
-              "ECG and USG",
+              "Consultation and medical care",
               "Pharmacy",
+              "Online pharmacy",
               "Vaccination",
-              "Subsidized health care",
+              "Telehealth",
+              "Laboratory tests",
             ].map((service, index) => (
               <div
                 key={index}

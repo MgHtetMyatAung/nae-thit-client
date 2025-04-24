@@ -7,11 +7,11 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 const facilities = [
-  { id: 1, name: "NTKM – 1", img: "/imgs/clinic.jpg", hours: "8am - 5pm" },
-  { id: 2, name: "NTKM – 2", img: "/imgs/clinic.jpg", hours: "9am - 6pm" },
-  { id: 3, name: "NTKM – 3", img: "/imgs/clinic.jpg", hours: "10am - 4pm" },
-  { id: 4, name: "NTKM – 4", img: "/imgs/clinic.jpg", hours: "10am - 5pm" },
-  { id: 5, name: "NTKM – 5", img: "/imgs/clinic.jpg", hours: "10am - 5pm" },
+  { id: 1, name: "NTKM – 1", img: "/imgs/ntkm_1.png", hours: "8am - 5pm" },
+  { id: 2, name: "NTKM – 2", img: "/imgs/ntkm_2.png", hours: "9am - 6pm" },
+  { id: 3, name: "NTKM – 3", img: "/imgs/ntkm_3.jpg", hours: "10am - 4pm" },
+  { id: 4, name: "NTKM – 4", img: "/imgs/ntkm_1.png", hours: "10am - 5pm" },
+  { id: 5, name: "NTKM – 5", img: "/imgs/ntkm_2.png", hours: "10am - 5pm" },
 ];
 
 export default function FacilitiesSlider() {

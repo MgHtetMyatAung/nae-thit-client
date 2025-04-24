@@ -14,11 +14,18 @@ const navItems = [
     //   dropdownItems: ["Home 1", "Home 2", "Home 3"],
   },
   {
-    name: "Blogs",
-    name_mm: "ဘလော့များ",
-    hasDropdown: false,
-    link: "/blogs",
-    // dropdownItems: ["Blog 1", "Blog 2"],
+    name: "About",
+    name_mm: "ကျွန်ုပ်တို့အကြောင်း",
+    hasDropdown: true,
+    link: "/about-us",
+    dropdownItems: [
+      { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
+      {
+        name: "Our Leadership",
+        name_mm: "အဖွဲ့ဝင်များ",
+        link: "/about-us#our-team",
+      },
+    ],
   },
   {
     name: "Our Services",
@@ -27,15 +34,13 @@ const navItems = [
     link: "/our-services",
   },
   {
-    name: "About",
-    name_mm: "ကျွန်ုပ်တို့အကြောင်း",
-    hasDropdown: true,
-    link: "/about-us",
-    dropdownItems: [
-      { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
-      { name: "Our Team", name_mm: "အဖွဲ့ဝင်များ", link: "/about-us#our-team" },
-    ],
+    name: "Blogs",
+    name_mm: "ဘလော့များ",
+    hasDropdown: false,
+    link: "/blogs",
+    // dropdownItems: ["Blog 1", "Blog 2"],
   },
+
   // {
   //   name: "Pages",
   //   hasDropdown: true,
@@ -53,7 +58,7 @@ const navItems = [
   // },
 
   {
-    name: "Contact",
+    name: "Contact Us",
     name_mm: "ဆက်သွယ်ရန်",
     hasDropdown: false,
     link: "/contact-us",
@@ -98,7 +103,7 @@ export default function Header() {
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
-                  className={`  flex items-center font-normal ${
+                  className={`  flex items-center font-medium ${
                     activeDropdown === item.name
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
@@ -131,7 +136,7 @@ export default function Header() {
                       <Link
                         key={dropdownItem.link}
                         href={`${dropdownItem.link}`}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-secondary"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-secondary"
                       >
                         {lang === "en"
                           ? dropdownItem.name
@@ -211,10 +216,10 @@ export default function Header() {
             {navItems.map((item) => (
               <div key={item.name} className="mb-4">
                 <button
-                  className={`flex items-center justify-between w-full py-2 ${
+                  className={`flex items-center justify-between font-medium w-full py-2 ${
                     activeDropdown === item.name
                       ? "text-blue-600"
-                      : "text-gray-700"
+                      : "text-secondary hover:text-blue-600"
                   }`}
                   onClick={() => {
                     item.hasDropdown &&

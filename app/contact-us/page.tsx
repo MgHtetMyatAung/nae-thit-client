@@ -1,4 +1,34 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+
+const social_links = [
+  {
+    name: "facebook",
+    link: "https://www.facebook.com/naethitkyannmar",
+    icon: "/icons/facebook.png",
+  },
+  {
+    name: "viber",
+    link: "https://invite.viber.com/?g2=AQArpafjL2D%2FalE9k6jKXyPzmq1a%2BYkMdg3Vk8bm0TXfwaWlV6kVMkqTHAbGzqLg",
+    icon: "/icons/viber.png",
+  },
+  {
+    name: "TikTok",
+    link: "https://www.tiktok.com/@naethitkyanmar",
+    icon: "/icons/tik-tok.png",
+  },
+  {
+    name: "Telegram",
+    link: "https://t.me/naethitkyannmar",
+    icon: "/icons/telegram.png",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/company/nae-thit-co-ltd-by-guarantee",
+    icon: "/icons/linkedin.png",
+  },
+];
 
 export default function ContactUsPage() {
   const contactMethods = [
@@ -146,29 +176,22 @@ export default function ContactUsPage() {
               <div className="mt-8">
                 <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  {["Facebook", "Twitter", "Instagram", "LinkedIn"].map(
-                    (social, index) => (
-                      <a
-                        key={index}
-                        href="#"
-                        className="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-                        aria-label={social}
-                      >
-                        <svg
-                          className="w-5 h-5 text-gray-700"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </a>
-                    )
-                  )}
+                  {social_links.map((social, index) => (
+                    <Link
+                      key={index}
+                      href={social.link}
+                      className="bg-gray-100 hover:bg-gray-200 w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+                      aria-label={social.name}
+                      target="_blank"
+                    >
+                      <Image
+                        src={social.icon}
+                        alt={social.name}
+                        width={24}
+                        height={24}
+                      />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -290,15 +313,24 @@ export default function ContactUsPage() {
             Our Location
           </h2>
           <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155732918656!2d-73.98784492416435!3d40.74844047138963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689874321234!5m2!1sen!2sus"
+            {/* <iframe
+              src="https://maps.app.goo.gl/xthNaF4ZgvFLF5MZ7https://www.google.com/maps/place/M-Tower/@16.825972,96.1302628,21z/data=!4m6!3m5!1s0x30c194ca12fe260b:0x5ec3dae9d33b5892!8m2!3d16.8258971!4d96.1304556!16s%2Fg%2F11g8x2zz_3?entry=ttu&g_ep=EgoyMDI1MDQyMi4wIKXMDSoASAFQAw%3D%3D"
               width="100%"
               height="450"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Charity Organization Location"
+              title="NTKM Organization Location"
+            ></iframe> */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238.68798393752022!2d96.13026278018464!3d16.825971968622017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194ca12fe260b%3A0x5ec3dae9d33b5892!2sM-Tower!5e0!3m2!1sen!2smm!4v1745520478736!5m2!1sen!2smm"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

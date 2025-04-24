@@ -147,16 +147,18 @@ export default function OurServicesPage() {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              "Consultation",
-              "Telehealth",
-              "ECG and USG",
+              "Consultation and medical care",
               "Pharmacy",
+              "Online pharmacy",
               "Vaccination",
-              "Subsidized health care",
-              "Medical check-up",
-              "Dental care",
-              "Eye care",
-              "Laboratory",
+              "Telehealth",
+              "Laboratory tests",
+              "ECG and USG",
+              "Family planning",
+              "Subsidized healthcare",
+              // "Medical check-up",
+              // "Dental care",
+              // "Eye care",
             ].map((service, index) => (
               <div
                 key={index}
