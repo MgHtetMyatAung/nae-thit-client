@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -72,6 +73,13 @@ export default function TestimonialsSlider() {
           {testimonials.map((t) => (
             <SwiperSlide key={t.id}>
               <div className="bg-white p-6 rounded-xl text-center">
+                <Image
+                  src={"/icons/left.png"}
+                  width={40}
+                  height={40}
+                  alt="left"
+                  className="mx-auto mb-4"
+                />
                 <p className="italic text-gray-700 mb-4">"{t.message}"</p>
                 <h4 className="font-semibold">{t.name}</h4>
                 <p className="text-sm text-gray-500">{t.location}</p>

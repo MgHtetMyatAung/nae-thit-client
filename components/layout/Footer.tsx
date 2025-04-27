@@ -1,3 +1,6 @@
+import { social_links } from "@/constant/data";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -52,27 +55,26 @@ export default function Footer() {
           {/* About Section */}
           <div className=" col-span-2 lg:col-span-1">
             <h3 className="text-2xl font-bold mb-4">NTKM</h3>
-            <p className="text-gray-300 mb-4">
+            {/* <p className="text-gray-300 mb-4">
               We are a non-profit organization dedicated to helping those in
               need through various charitable programs and initiatives.
-            </p>
+            </p> */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href="#"
-                  className="text-gray-300 hover:text-white transition-colors"
+              {social_links.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.link}
+                  className="bg-gray-100 hover:bg-gray-200 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                   aria-label={social.name}
+                  target="_blank"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d={social.icon} />
-                  </svg>
-                </a>
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    width={24}
+                    height={24}
+                  />
+                </Link>
               ))}
             </div>
           </div>

@@ -6,88 +6,22 @@ import Link from "next/link";
 export default function Home() {
   const services = [
     {
-      icon: (
-        <svg
-          className="w-10 h-10 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-      title: "Donation",
-      description:
-        "Support our causes with financial contributions that help fund critical programs and initiatives.",
+      id: 1,
+      name: "Primary Care",
+      img: "/source/heath_care.png",
+      link: "/our-services",
     },
     {
-      icon: (
-        <svg
-          className="w-10 h-10 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-        </svg>
-      ),
-      title: "Volunteer",
-      description:
-        "Join our team of dedicated volunteers and make a hands-on difference in your community.",
+      id: 2,
+      name: "Specialist Care",
+      img: "/source/teleheath_care.png",
+      link: "/our-services",
     },
     {
-      icon: (
-        <svg
-          className="w-10 h-10 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-          />
-        </svg>
-      ),
-      title: "Events",
-      description:
-        "Participate in our charity events that bring communities together for meaningful causes.",
-    },
-    {
-      icon: (
-        <svg
-          className="w-10 h-10 text-blue-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-          />
-        </svg>
-      ),
-      title: "Causes",
-      description:
-        "Discover and support the various causes we champion to create positive change.",
+      id: 3,
+      name: "Emergency Care",
+      img: "/source/special_care.png",
+      link: "/our-services",
     },
   ];
 
@@ -156,19 +90,32 @@ export default function Home() {
               Because he was outstanding in his field. Lorem ipsum
             </p>
             <div className="mt-8 flex justify-center space-x-4">
-              <button className="bg-accent-orange text-white hover:bg-primary-dark px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
-                Book Now
-              </button>
-              <button className="px-8 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-secondary md:py-4 md:text-lg md:px-10 transition duration-300">
+              <button className="bg-primary-dark text-white hover:bg-accent-orange px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
                 Explore More
               </button>
+              {/* <button className="px-8 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-secondary md:py-4 md:text-lg md:px-10 transition duration-300">
+                Explore More
+              </button> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className=" container py-16">
+      <section className=" container pb-16 pt-8">
+        <div className="relative py-8 max-w-[200px] mx-auto">
+          <div
+            className="absolute inset-0 flex items-center"
+            aria-hidden="true"
+          >
+            <div className="w-full border-t-2 border-gray-300"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <span className="bg-white px-4 font-medium tracking-wider">
+              About Us
+            </span>
+          </div>
+        </div>
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="bg-gray-200 rounded-lg">
             <Image
@@ -184,7 +131,7 @@ export default function Home() {
             <h2 className=" text-lg md:text-3xl mb-3 font-bold text-gray-900">
               Background
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className=" text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Blanditiis quae, consectetur adipisicing elit. Blanditiis quae,
               consectetur adipisicing elit. Blanditiis quae, perspiciatis maxime
@@ -192,7 +139,9 @@ export default function Home() {
               aliquam nisi architecto veniam tempore corporis quis laudantium.
               Qui, neque. Rem mollitia consequuntur culpa...
             </p>
-            <button className="text-yellow-400 mt-4 text-sm">Read More</button>
+            <button className="text-primary-dark mt-4 text-sm">
+              Read More
+            </button>
           </div>
         </div>
       </section>
@@ -204,7 +153,7 @@ export default function Home() {
             <h3 className="text-lg md:text-3xl mb-3 font-bold text-gray-900">
               What is Social Enterprise?
             </h3>
-            <p className="text-sm text-gray-700">
+            <p className=" text-gray-700">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
               accusantium voluptatibus, consectetur adipisicing elit. Blanditiis
               quae, consectetur adipisicing elit. Blanditiis quae, consectetur
@@ -213,11 +162,13 @@ export default function Home() {
               consequuntur ab error eum culpa soluta enim, ullam hic a
               dignissimos saepe odio, vitae quibusdam dicta?...
             </p>
-            <button className="text-yellow-400 mt-4 text-sm">Read More</button>
+            <button className="text-primary-dark mt-4 text-sm">
+              Read More
+            </button>
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
             <Image
-              src={"/imgs/special_heathcare.jpg"}
+              src={"/imgs/clinic.jpg"}
               alt="About Us"
               width={800}
               height={600}
@@ -286,27 +237,20 @@ export default function Home() {
             Explore Our <span className="text-yellow-400">Services</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              "Consultation and medical care",
-              "Pharmacy",
-              "Online pharmacy",
-              "Vaccination",
-              "Telehealth",
-              "Laboratory tests",
-            ].map((service, index) => (
+            {services.map((service, index) => (
               <div
                 key={index}
-                className={`group rounded-lg border px-6 py-10 text-center hover:bg-primary hover:text-white`}
+                className={`group bg-white rounded-lg border px-6 py-8 text-center hover:bg-primary hover:text-white`}
               >
                 <Image
-                  src={"/icons/building.png"}
-                  alt={service}
-                  width={30}
-                  height={30}
+                  src={service.img}
+                  alt={service.name}
+                  width={60}
+                  height={60}
                   className="mx-auto mb-4 filter group-hover:brightness-[5]"
                 />
-                <h3 className="font-semibold text-lg">{service}</h3>
-                <p className=" text-gray-500 group-hover:text-gray-100">
+                <h3 className="font-semibold text-lg">{service.name}</h3>
+                <p className=" text-gray-500 group-hover:text-gray-100 mt-2">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Animi, adipisci.
                 </p>

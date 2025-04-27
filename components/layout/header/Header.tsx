@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import LangSwitchBtn from "./LangSwitchBtn";
 import { useLangStore } from "@/hooks/useLangStore";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   {
@@ -85,10 +86,19 @@ export default function Header() {
         <div className="flex justify-between items-center h-[70px]">
           {/* Logo */}
           <div
-            className="text-xl font-bold text-secondary cursor-pointer py-4"
+            className=" flex items-center select-none cursor-pointer py-4"
             onClick={() => router.push("/")}
           >
-            NTKM
+            <Image
+              src={"/source/logo.png"}
+              alt="logo"
+              width={100}
+              height={100}
+              className=" w-[60px] h-auto"
+            />
+            <span className=" text-lg font-semibold text-primary-dark">
+              Nae Thit Social Enterprise
+            </span>
           </div>
 
           {/* Desktop Navigation */}
