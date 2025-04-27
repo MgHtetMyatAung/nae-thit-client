@@ -54,7 +54,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className=" col-span-2 lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">NTKM</h3>
+            <h3 className="text-xl font-semibold mb-4">
+              Nae Thit Social Enterprise
+            </h3>
             {/* <p className="text-gray-300 mb-4">
               We are a non-profit organization dedicated to helping those in
               need through various charitable programs and initiatives.

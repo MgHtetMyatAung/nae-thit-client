@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function AboutUsPage() {
@@ -103,6 +104,43 @@ export default function AboutUsPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className=" bg-primary py-6 md:py-10">
+        <div className="container">
+          <Image
+            src={"/source/logo_white.png"}
+            alt="Logo"
+            width={300}
+            height={300}
+            priority={true}
+            className="mx-auto w-[200px] h-auto md:w-[300px]"
+          />
+        </div>
+      </section>
+
+      <section className=" py-16" id="intro">
+        <div className=" container mx-auto">
+          <h2 className=" text-xl lg:text-2xl font-bold text-center mb-3">
+            Introducing{" "}
+            <span className=" text-primary-dark">Nae Thit Kyan Mar</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
+            minima aut architecto neque, nam ut exercitationem atque deleniti
+            saepe culpa officiis! Sequi, vitae corrupti alias ullam dolor
+            consequatur eius rem recusandae blanditiis molestias, odit ipsa
+            deleniti. Atque cupiditate, Nisi sunt quae deleniti soluta dolorem.
+            Distinctio libero voluptates id fuga vitae provident temporibus
+            cupiditate tempora laudantium et, ut aspernatur natus velit
+            exercitationem hic recusandae neque ut aspernatur natus velit
+            exercitationem hic recusandae neque ut aspernatur natus velit
+            exercitationem hic recusandae neque ut aspernatur natus velit
+            exercitationem hic recusandae neque illo similique. Nisi dolorum
+            perspiciatis magni necessitatibus similique explicabo corporis
+            cumque...
+          </p>
         </div>
       </section>
 
