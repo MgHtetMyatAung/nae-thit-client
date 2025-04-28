@@ -50,6 +50,35 @@ export default async function LocaleLayout({
     >
       <head>
         <link rel="icon" href="/source/logo.png" />
+        {/* <!-- Primary Meta Tags --> */}
+        <title>Nae Thit Social Enterprise</title>
+        <meta name="title" content="Nae Thit Social Enterprise" />
+        <meta
+          name="description"
+          content="Providing Quality Healthcare with Affordable Solutions"
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nae-thit.vercel.app/" />
+        <meta property="og:title" content="Nae Thit Social Enterprise" />
+        <meta
+          property="og:description"
+          content="Providing Quality Healthcare with Affordable Solutions"
+        />
+        <meta property="og:image" content="/source/logo.png" />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nae-thit.vercel.app/" />
+        <meta property="twitter:title" content="Nae Thit Social Enterprise" />
+        <meta
+          property="twitter:description"
+          content="Providing Quality Healthcare with Affordable Solutions"
+        />
+        <meta property="twitter:image" content="/source/logo.png" />
+
+        {/* <!-- Meta Tags Generated with https://metatags.io --> */}
       </head>
       <body>
         <NextIntlClientProvider>
