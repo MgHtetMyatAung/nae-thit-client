@@ -128,7 +128,7 @@ export default function Home() {
             />
           </div>
           <div>
-            <h2 className=" text-lg md:text-3xl mb-3 font-bold text-gray-900">
+            <h2 className=" text-lg md:text-3xl mb-3 font-bold text-accent-orange">
               Background
             </h2>
             <p className=" text-gray-600">
@@ -150,7 +150,7 @@ export default function Home() {
       <section className=" container pb-16">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className=" order-2 md:order-1">
-            <h3 className="text-lg md:text-3xl mb-3 font-bold text-gray-900">
+            <h3 className="text-lg md:text-3xl mb-3 font-bold text-accent-orange">
               What is Social Enterprise?
             </h3>
             <p className=" text-gray-700">
@@ -195,8 +195,7 @@ export default function Home() {
       <section className=" py-16">
         <div className=" container mx-auto">
           <h2 className=" text-xl lg:text-2xl font-bold text-center mb-3">
-            Introducing{" "}
-            <span className=" text-primary-dark">Nae Thit Kyan Mar</span>
+            Introducing <span className=" text-primary">Nae Thit Kyan Mar</span>
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
@@ -229,16 +228,16 @@ export default function Home() {
             <p className="text-sm">Years of Service</p>
           </div>
           <div>
-            <p className="text-2xl font-bold">3</p>
-            <p className="text-sm">Clinics & Pharmacies</p>
+            <p className="text-2xl font-bold">106,406</p>
+            <p className="text-sm">Total Number of Patients Treated</p>
           </div>
           <div>
             <p className="text-2xl font-bold">48</p>
             <p className="text-sm">Team Members</p>
           </div>
           <div>
-            <p className="text-2xl font-bold">181,353</p>
-            <p className="text-sm">Catchment Population</p>
+            <p className="text-2xl font-bold">756,982</p>
+            <p className="text-sm">Total Population Served</p>
           </div>
         </div>
       </section>
@@ -282,7 +281,9 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`group bg-white shadow rounded-lg border px-6 py-8 text-center hover:bg-primary hover:text-white`}
+                className={`group ${
+                  index === 1 ? "bg-green-300 text-white" : "bg-white"
+                } shadow rounded-lg border px-6 py-8 text-center hover:bg-primary hover:text-white`}
               >
                 <Image
                   src={service.img}
@@ -292,7 +293,7 @@ export default function Home() {
                   className="mx-auto mb-4 filter group-hover:brightness-[5]"
                 />
                 <h3 className="font-semibold text-lg">{service.name}</h3>
-                <p className=" text-gray-500 group-hover:text-gray-100 mt-2">
+                <p className=" group-hover:text-gray-100 mt-2">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Animi, adipisci.
                 </p>

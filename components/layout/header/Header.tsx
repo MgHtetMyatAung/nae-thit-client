@@ -96,7 +96,7 @@ export default function Header() {
               height={100}
               className=" w-[60px] h-auto"
             />
-            <span className=" text-lg font-semibold text-primary-dark">
+            <span className=" text-lg font-semibold text-accent-orange">
               Nae Thit Social Enterprise
             </span>
           </div>

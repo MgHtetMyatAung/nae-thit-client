@@ -49,7 +49,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary text-base-white pt-12 pb-6">
+    <footer className="bg-accent-orange text-base-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
@@ -90,7 +90,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-100 hover:text-white transition-colors"
                     >
                       {link}
                     </a>
@@ -123,7 +123,7 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className=" text-center">
-          <p className="text-gray-300 text-sm mb-4 md:mb-0">
+          <p className="text-gray-100 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} NTKM. All rights reserved.
           </p>
         </div>

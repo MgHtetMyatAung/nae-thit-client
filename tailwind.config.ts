@@ -21,7 +21,7 @@ const config: Config = {
           light: "#5270b6",
         },
         accent: {
-          orange: "#e08e26",
+          orange: "#f78e37",
           coral: "#f08173",
           teal: "#6ac5ac",
         },
