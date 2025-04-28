@@ -1,11 +1,20 @@
 import { useLangStore } from "@/hooks/useLangStore";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 export default function LangSwitchBtn({ isMobile }: { isMobile: boolean }) {
   const { lang, changeLang } = useLangStore();
+  const pathname = usePathname();
+  const router = useRouter();
   const changeLangFunction = () => {
-    if (lang === "en") changeLang("my");
-    if (lang === "my") changeLang("en");
+    if (lang === "en") {
+      changeLang("my");
+      router.push(`/mm${pathname.slice(3)}`);
+    }
+    if (lang === "my") {
+      changeLang("en");
+      router.push(`/en${pathname.slice(3)}`);
+    }
   };
   return (
     <button
