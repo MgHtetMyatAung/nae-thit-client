@@ -1,3 +1,4 @@
+import { Noto_Sans_Myanmar } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
@@ -10,6 +11,12 @@ import BaseUserInterface from "@/components/common/BaseUserInterface";
 import Header from "@/components/layout/header/Header";
 import PreLoading from "@/components/common/PreLoading";
 import Footer from "@/components/layout/Footer";
+
+const myanmarFont = Noto_Sans_Myanmar({
+  subsets: ["myanmar"],
+  weight: ["400", "500", "700"],
+  variable: "--font-myanmar",
+});
 
 const geistSans = localFont({
   src: "../fonts/gro-regular.otf",
@@ -46,10 +53,14 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${myanmarFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
         <link rel="icon" href="/source/logo.png" />
+        {/* <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar&display=swap"
+          rel="stylesheet"
+        /> */}
         {/* <!-- Primary Meta Tags --> */}
         <title>Nae Thit Social Enterprise</title>
         <meta name="title" content="Nae Thit Social Enterprise" />

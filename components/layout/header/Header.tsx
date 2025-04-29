@@ -9,30 +9,35 @@ import { useTranslations } from "next-intl";
 
 const navItems = [
   {
-    key: "home",
+    name: "Home",
+    name_mm: "မူလ",
     hasDropdown: false,
     link: "/",
     //   dropdownItems: ["Home 1", "Home 2", "Home 3"],
   },
   {
-    key: "about",
+    name: "About",
+    name_mm: "ကျွန်ုပ်တို့အကြောင်း",
     hasDropdown: true,
     link: "/about-us",
     dropdownItems: [
-      { key: "about_us", link: "/about-us" },
+      { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
       {
-        key: "our_team",
+        name: "Our Leadership",
+        name_mm: "အဖွဲ့ဝင်များ",
         link: "/about-us#our-team",
       },
     ],
   },
   {
-    key: "our_services",
+    name: "Our Services",
+    name_mm: "ဝန်ဆောင်မှုများ",
     hasDropdown: false,
     link: "/our-services",
   },
   {
-    key: "blogs",
+    name: "Blogs",
+    name_mm: "ဘလော့များ",
     hasDropdown: false,
     link: "/blogs",
     // dropdownItems: ["Blog 1", "Blog 2"],
@@ -55,7 +60,8 @@ const navItems = [
   // },
 
   {
-    key: "contact_us",
+    name: "Contact Us",
+    name_mm: "ဆက်သွယ်ရန်",
     hasDropdown: false,
     link: "/contact-us",
   },
@@ -93,7 +99,7 @@ export default function Header() {
               className=" w-[60px] h-auto"
             />
             <span className=" text-lg font-semibold text-accent-orange">
-              {t("title")}
+              Nae Thit Social Enterprise
             </span>
           </div>
 
@@ -101,22 +107,22 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-10 h-full">
             {navItems.map((item) => (
               <div
-                key={item.key}
+                key={item.name}
                 className="relative h-full py-6 group"
                 onMouseEnter={() =>
-                  item.hasDropdown && setActiveDropdown(item.key)
+                  item.hasDropdown && setActiveDropdown(item.name)
                 }
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
                   className={`  flex items-center font-medium ${
-                    activeDropdown === item.key
+                    activeDropdown === item.name
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
                   } transition-colors`}
                   onClick={() => !item.hasDropdown && router.push(item.link)}
                 >
-                  {t(`${item.key}`)}
+                  {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
                     <svg
                       className="w-4 h-4 ml-2 group-hover:rotate-180
@@ -136,7 +142,7 @@ export default function Header() {
                   )}
                 </button>
 
-                {item.hasDropdown && activeDropdown === item.key && (
+                {item.hasDropdown && activeDropdown === item.name && (
                   <div className="absolute left-0 top-[70px] w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
                     {item?.dropdownItems?.map((dropdownItem) => (
                       <Link
@@ -144,7 +150,9 @@ export default function Header() {
                         href={`${dropdownItem.link}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-secondary"
                       >
-                        {t(`${dropdownItem.key}`)}
+                        {lang === "en"
+                          ? dropdownItem.name
+                          : dropdownItem.name_mm}
                       </Link>
                     ))}
                   </div>
@@ -218,27 +226,27 @@ export default function Header() {
 
           <nav className="px-6">
             {navItems.map((item) => (
-              <div key={item.key} className="mb-4">
+              <div key={item.name} className="mb-4">
                 <button
                   className={`flex items-center justify-between font-medium w-full py-2 ${
-                    activeDropdown === item.key
+                    activeDropdown === item.name
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
                   }`}
                   onClick={() => {
                     item.hasDropdown &&
                       setActiveDropdown(
-                        activeDropdown === item.key ? null : item.key
+                        activeDropdown === item.name ? null : item.name
                       );
                     !item.hasDropdown && router.push(item.link);
                     !item.hasDropdown && setMobileMenuOpen(false);
                   }}
                 >
-                  {t(`${item.key}`)}
+                  {lang === "en" ? item.name : item.name_mm}
                   {item.hasDropdown && (
                     <svg
                       className={`w-4 h-4 ml-1 transform ${
-                        activeDropdown === item.key ? "rotate-180" : ""
+                        activeDropdown === item.name ? "rotate-180" : ""
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -255,7 +263,7 @@ export default function Header() {
                   )}
                 </button>
 
-                {item.hasDropdown && activeDropdown === item.key && (
+                {item.hasDropdown && activeDropdown === item.name && (
                   <div className="pl-4 mt-2 space-y-2">
                     {item?.dropdownItems?.map((dropdownItem) => (
                       <a
@@ -267,7 +275,9 @@ export default function Header() {
                           setMobileMenuOpen(false);
                         }}
                       >
-                        {t(`${dropdownItem.key}`)}
+                        {lang === "en"
+                          ? dropdownItem.name
+                          : dropdownItem.name_mm}
                       </a>
                     ))}
                   </div>

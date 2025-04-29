@@ -81,10 +81,12 @@ export default function AboutUsPage() {
 
       {/* About Description */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <div className="space-y-6 text-lg text-gray-700">
+            <h2 className="text-3xl font-bold text-accent-orange mb-6">
+              Background
+            </h2>
+            <div className="space-y-6 font-medium text-gray-700">
               <p>
                 In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise,
                 was established and provides quality healthcare services to the
@@ -104,6 +106,7 @@ export default function AboutUsPage() {
               </p>
             </div>
           </div>
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg"></div>
         </div>
       </section>
 
@@ -141,6 +144,29 @@ export default function AboutUsPage() {
             perspiciatis magni necessitatibus similique explicabo corporis
             cumque...
           </p>
+        </div>
+      </section>
+
+      <section className=" bg-white md:py-10 shadow">
+        <div className=" container mx-auto flex justify-center items-center gap-5">
+          <div>
+            <Image
+              src="/source/mm_logo.png"
+              width={400}
+              height={400}
+              alt="logo"
+              className=""
+            />
+          </div>
+          <div>
+            <Image
+              src="/source/UCLA.png"
+              width={500}
+              height={400}
+              alt="logo"
+              className=""
+            />
+          </div>
         </div>
       </section>
 
