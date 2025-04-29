@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
   {
@@ -39,6 +40,7 @@ const testimonials = [
 ];
 
 export default function TestimonialsSlider() {
+  const t = useTranslations("HomePage");
   return (
     <div>
       <div className=" container px-4 py-10">
@@ -51,7 +53,7 @@ export default function TestimonialsSlider() {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-white px-4 font-medium tracking-wider">
-              Testimonial
+              {t("testimonial")}
             </span>
           </div>
         </div>

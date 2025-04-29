@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { useTranslations } from "next-intl";
 
 const facilities = [
   { id: 1, name: "NTKM – 1", img: "/imgs/ntkm_1.png", hours: "8am - 5pm" },
@@ -15,6 +16,7 @@ const facilities = [
 ];
 
 export default function FacilitiesSlider() {
+  const t = useTranslations("HomePage");
   return (
     <div className=" container">
       <div className="w-full py-10">
@@ -27,7 +29,7 @@ export default function FacilitiesSlider() {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-white px-4 font-medium tracking-wider">
-              Our Clinics & Pharmacies
+              {t("clinics_pharmacies")}
             </span>
           </div>
         </div>

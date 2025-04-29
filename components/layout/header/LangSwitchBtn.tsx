@@ -1,9 +1,11 @@
 import { useLangStore } from "@/hooks/useLangStore";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 export default function LangSwitchBtn({ isMobile }: { isMobile: boolean }) {
   const { lang, changeLang } = useLangStore();
+  const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
   const changeLangFunction = () => {
@@ -23,7 +25,7 @@ export default function LangSwitchBtn({ isMobile }: { isMobile: boolean }) {
         isMobile ? " w-full" : "hidden min-w-[95px]"
       }  md:inline-block bg-secondary hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors`}
     >
-      {lang === "en" ? "Myanmar" : "အင်္ဂလိပ်"}
+      {locale === "en" ? "Myanmar" : "အင်္ဂလိပ်"}
     </button>
   );
 }

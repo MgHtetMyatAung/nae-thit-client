@@ -1,9 +1,23 @@
 {
   "Header": {
-    "title": "နေ့သစ်ကျန်းမာ"
+    "title": "နေ့သစ်ကျန်းမာ",
+    "home": "မူလ",
+    "about": "ကျွန်ုပ်တို့အကြောင်း",
+    "about_us": "ကျွန်ုပ်တို့အကြောင်း",
+    "our_team": "အဖွဲ့ဝင်များ",
+    "our_services": "ဝန်ဆောင်မှုများ",
+    "blogs": "ဘလော့ဂ်များ",
+    "contact_us": "ဆက်သွယ်ရန်"
   },
   "HomePage": {
     "title": "Hello world!",
-    "about": "Go to the about page"
+    "about": "Go to the about page",
+    "explore_more": "ပိုမိုကြည့်ရှုရန်",
+    "about_us": "ကျွန်ုပ်တို့အကြောင်း",
+    "read_more": "ပိုမိုဖတ်ရှုမည်",
+    "see_more": "ပိုမိုကြည့်မည်",
+    "clinics_pharmacies": "ဆေးခန်း နှင့် ဆေးဆိုင်များ",
+    "our_services": "ဝန်ဆောင်မှုများ",
+    "testimonial": "ဖော်ပြချက်များ"
   }
 }

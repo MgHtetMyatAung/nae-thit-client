@@ -9,35 +9,30 @@ import { useTranslations } from "next-intl";
 
 const navItems = [
   {
-    name: "Home",
-    name_mm: "မူလ",
+    key: "home",
     hasDropdown: false,
     link: "/",
     //   dropdownItems: ["Home 1", "Home 2", "Home 3"],
   },
   {
-    name: "About",
-    name_mm: "ကျွန်ုပ်တို့အကြောင်း",
+    key: "about",
     hasDropdown: true,
     link: "/about-us",
     dropdownItems: [
-      { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
+      { key: "about_us", link: "/about-us" },
       {
-        name: "Our Leadership",
-        name_mm: "အဖွဲ့ဝင်များ",
+        key: "our_team",
         link: "/about-us#our-team",
       },
     ],
   },
   {
-    name: "Our Services",
-    name_mm: "ဝန်ဆောင်မှုများ",
+    key: "our_services",
     hasDropdown: false,
     link: "/our-services",
   },
   {
-    name: "Blogs",
-    name_mm: "ဘလော့များ",
+    key: "blogs",
     hasDropdown: false,
     link: "/blogs",
     // dropdownItems: ["Blog 1", "Blog 2"],
@@ -60,8 +55,7 @@ const navItems = [
   // },
 
   {
-    name: "Contact Us",
-    name_mm: "ဆက်သွယ်ရန်",
+    key: "contact_us",
     hasDropdown: false,
     link: "/contact-us",
   },
@@ -107,22 +101,22 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-10 h-full">
             {navItems.map((item) => (
               <div
-                key={item.name}
+                key={item.key}
                 className="relative h-full py-6 group"
                 onMouseEnter={() =>
-                  item.hasDropdown && setActiveDropdown(item.name)
+                  item.hasDropdown && setActiveDropdown(item.key)
                 }
                 onMouseLeave={() => item.hasDropdown && setActiveDropdown(null)}
               >
                 <button
                   className={`  flex items-center font-medium ${
-                    activeDropdown === item.name
+                    activeDropdown === item.key
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
                   } transition-colors`}
                   onClick={() => !item.hasDropdown && router.push(item.link)}
                 >
-                  {lang === "en" ? item.name : item.name_mm}
+                  {t(`${item.key}`)}
                   {item.hasDropdown && (
                     <svg
                       className="w-4 h-4 ml-2 group-hover:rotate-180
@@ -142,7 +136,7 @@ export default function Header() {
                   )}
                 </button>
 
-                {item.hasDropdown && activeDropdown === item.name && (
+                {item.hasDropdown && activeDropdown === item.key && (
                   <div className="absolute left-0 top-[70px] w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
                     {item?.dropdownItems?.map((dropdownItem) => (
                       <Link
@@ -150,9 +144,7 @@ export default function Header() {
                         href={`${dropdownItem.link}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-secondary"
                       >
-                        {lang === "en"
-                          ? dropdownItem.name
-                          : dropdownItem.name_mm}
+                        {t(`${dropdownItem.key}`)}
                       </Link>
                     ))}
                   </div>
@@ -226,27 +218,27 @@ export default function Header() {
 
           <nav className="px-6">
             {navItems.map((item) => (
-              <div key={item.name} className="mb-4">
+              <div key={item.key} className="mb-4">
                 <button
                   className={`flex items-center justify-between font-medium w-full py-2 ${
-                    activeDropdown === item.name
+                    activeDropdown === item.key
                       ? "text-blue-600"
                       : "text-secondary hover:text-blue-600"
                   }`}
                   onClick={() => {
                     item.hasDropdown &&
                       setActiveDropdown(
-                        activeDropdown === item.name ? null : item.name
+                        activeDropdown === item.key ? null : item.key
                       );
                     !item.hasDropdown && router.push(item.link);
                     !item.hasDropdown && setMobileMenuOpen(false);
                   }}
                 >
-                  {lang === "en" ? item.name : item.name_mm}
+                  {t(`${item.key}`)}
                   {item.hasDropdown && (
                     <svg
                       className={`w-4 h-4 ml-1 transform ${
-                        activeDropdown === item.name ? "rotate-180" : ""
+                        activeDropdown === item.key ? "rotate-180" : ""
                       }`}
                       fill="none"
                       stroke="currentColor"
@@ -263,7 +255,7 @@ export default function Header() {
                   )}
                 </button>
 
-                {item.hasDropdown && activeDropdown === item.name && (
+                {item.hasDropdown && activeDropdown === item.key && (
                   <div className="pl-4 mt-2 space-y-2">
                     {item?.dropdownItems?.map((dropdownItem) => (
                       <a
@@ -275,9 +267,7 @@ export default function Header() {
                           setMobileMenuOpen(false);
                         }}
                       >
-                        {lang === "en"
-                          ? dropdownItem.name
-                          : dropdownItem.name_mm}
+                        {t(`${dropdownItem.key}`)}
                       </a>
                     ))}
                   </div>

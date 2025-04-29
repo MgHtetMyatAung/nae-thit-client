@@ -1,30 +1,32 @@
 import FacilitiesSlider from "@/components/pages/home/Facilities";
 import TestimonialsSlider from "@/components/pages/home/Testimonial";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
-  const services = [
-    {
-      id: 1,
-      name: "Primary Care",
-      img: "/source/heath_care.png",
-      link: "/our-services",
-    },
-    {
-      id: 2,
-      name: "Specialist Care",
-      img: "/source/teleheath_care.png",
-      link: "/our-services",
-    },
-    {
-      id: 3,
-      name: "Emergency Care",
-      img: "/source/special_care.png",
-      link: "/our-services",
-    },
-  ];
+const services = [
+  {
+    id: 1,
+    name: "Primary Care",
+    img: "/source/heath_care.png",
+    link: "/our-services",
+  },
+  {
+    id: 2,
+    name: "Specialist Care",
+    img: "/source/teleheath_care.png",
+    link: "/our-services",
+  },
+  {
+    id: 3,
+    name: "Emergency Care",
+    img: "/source/special_care.png",
+    link: "/our-services",
+  },
+];
 
+export default async function Home() {
+  const t = await getTranslations("HomePage");
   const stats = [
     { value: "1,200+", label: "Volunteers" },
     { value: "$5M+", label: "Donations" },
@@ -91,7 +93,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex justify-center space-x-4">
               <button className="bg-primary-dark text-white hover:bg-accent-orange px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
-                Explore More
+                {t("explore_more")}
               </button>
               {/* <button className="px-8 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-secondary md:py-4 md:text-lg md:px-10 transition duration-300">
                 Explore More
@@ -112,7 +114,7 @@ export default function Home() {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-white px-4 font-medium tracking-wider">
-              About Us
+              {t("about_us")}
             </span>
           </div>
         </div>
@@ -140,7 +142,7 @@ export default function Home() {
               Qui, neque. Rem mollitia consequuntur culpa...
             </p>
             <button className="text-primary-dark mt-4 text-sm">
-              Read More
+              {t("read_more")}
             </button>
           </div>
         </div>
@@ -163,7 +165,7 @@ export default function Home() {
               dignissimos saepe odio, vitae quibusdam dicta?...
             </p>
             <button className="text-primary-dark mt-4 text-sm">
-              Read More
+              {t("read_more")}
             </button>
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
@@ -214,7 +216,7 @@ export default function Home() {
               href={"/about-us#intro"}
               className=" text-secondary font-medium underline"
             >
-              See more
+              {t("see_more")}
             </Link>
           </div>
         </div>
@@ -270,7 +272,7 @@ export default function Home() {
             </div>
             <div className="relative flex justify-center">
               <span className="bg-white px-4 font-medium tracking-wider">
-                Our Services
+                {t("our_services")}
               </span>
             </div>
           </div>
@@ -306,7 +308,7 @@ export default function Home() {
             href={"/our-services"}
             className=" text-secondary font-medium underline"
           >
-            See more
+            {t("see_more")}
           </Link>
         </div>
       </section>
