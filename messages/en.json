@@ -1,23 +1,15 @@
 {
-  "Header": {
-    "title": "Nae Thit Social Enterprise",
-    "home": "Home",
-    "about": "About",
-    "about_us": "About Us",
-    "our_team": "Our Leadership",
-    "our_services": "Our Services",
-    "blogs": "Blogs",
-    "contact_us": "Contact Us"
-  },
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page",
-    "explore_more": "Explore More",
-    "about_us": "About Us",
-    "read_more": "Read More",
-    "see_more": "See More",
-    "clinics_pharmacies": "Our Clinics & Pharmacies",
-    "our_services": "Our Services",
-    "testimonial": "Testimonial"
-  }
+  "title": "Nae Thit Social Enterprise",
+  "home": "Home",
+  "about": "About",
+  "about_us": "About Us",
+  "our_team": "Our Leadership",
+  "our_services": "Our Services",
+  "blogs": "Blogs",
+  "contact_us": "Contact Us",
+  "explore_more": "Explore More",
+  "read_more": "Read More",
+  "see_more": "See More",
+  "clinics_pharmacies": "Our Clinics & Pharmacies",
+  "testimonial": "Testimonial"
 }

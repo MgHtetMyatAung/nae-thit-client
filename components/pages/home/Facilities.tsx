@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { useTranslations } from "next-intl";
+import useTranslation from "@/hooks/useTranslation";
 
 const facilities = [
   { id: 1, name: "NTKM – 1", img: "/imgs/ntkm_1.png", hours: "8am - 5pm" },
@@ -16,7 +16,7 @@ const facilities = [
 ];
 
 export default function FacilitiesSlider() {
-  const t = useTranslations("HomePage");
+  const { t } = useTranslation();
   return (
     <div className=" container">
       <div className="w-full py-10">

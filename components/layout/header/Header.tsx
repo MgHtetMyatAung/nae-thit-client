@@ -5,7 +5,7 @@ import LangSwitchBtn from "./LangSwitchBtn";
 import { useLangStore } from "@/hooks/useLangStore";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import useTranslation from "@/hooks/useTranslation";
 
 const navItems = [
   {
@@ -72,7 +72,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { lang } = useLangStore();
-  const t = useTranslations("Header");
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -99,7 +99,7 @@ export default function Header() {
               className=" w-[60px] h-auto"
             />
             <span className=" text-lg font-semibold text-accent-orange">
-              Nae Thit Social Enterprise
+              {t("title")}
             </span>
           </div>
 
