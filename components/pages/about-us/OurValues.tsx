@@ -4,7 +4,7 @@ import React from "react";
 const values = [
   {
     title: "Substainability",
-    img: "/source/substainability.png",
+    img: "/source/Substainability.png",
   },
   {
     title: "Learning",
