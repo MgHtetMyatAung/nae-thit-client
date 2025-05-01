@@ -117,7 +117,7 @@ export default function OurServicesPage() {
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-normal mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Our Services
           </h1>
           <p className="text-xl">

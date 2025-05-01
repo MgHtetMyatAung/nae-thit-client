@@ -1,3 +1,5 @@
+import OurMission from "@/components/pages/about-us/OurMission";
+import OurValues from "@/components/pages/about-us/OurValues";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -69,7 +71,7 @@ export default function AboutUsPage() {
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-normal mb-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-primary">
             About Us
           </h1>
           <p className="text-xl max-w-2xl text-center mx-auto">
@@ -171,7 +173,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md">
@@ -198,34 +200,45 @@ export default function AboutUsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Values */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Our Core Values
+      {/* our vision */}
+      <section className=" py-16">
+        <div>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our <span className=" text-primary">Vision</span>
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-6 rounded-lg text-center"
-              >
-                <div className="text-3xl mb-3">{value.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
+        </div>
+        <div className=" container grid grid-cols-1 xl:grid-cols-2">
+          <div className=" bg-primary text-white p-7">
+            <h3 className="text-3xl font-semibold italic">
+              " Providing Quality Healthcare with Affordable Solutions "
+            </h3>
+          </div>
+          <div className=" p-7">
+            <p className=" text-xl font-medium">
+              To be the leading{" "}
+              <span className=" text-3xl text-primary">self-sustainable</span>{" "}
+              healthcare social enterprise in Myanmar, transforming lives
+              through <span className=" text-3xl text-primary">innovative</span>{" "}
+              and <span className=" text-3xl text-primary">comprehensive</span>{" "}
+              healthcare solutions.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* our mission  */}
+      <OurMission />
+
+      {/* Values */}
+      <OurValues />
 
       {/* Team */}
       <section className="py-16 bg-gray-50" id="our-team">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Meet Our Leadership
+            Meet Our <span className=" text-primary">Leadership</span>
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
