@@ -104,7 +104,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10 h-full">
+          <nav className="hidden lg:flex items-center space-x-10 h-full">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -162,13 +162,13 @@ export default function Header() {
           </nav>
 
           {/* Join Button */}
-          <div className="py-4">
+          <div className="py-4 hidden lg:block">
             <LangSwitchBtn isMobile={false} />
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-800 focus:outline-none"
+            className="lg:hidden text-gray-800 focus:outline-none"
             onClick={() => setMobileMenuOpen(true)}
           >
             <svg
@@ -193,7 +193,7 @@ export default function Header() {
       <div
         className={`fixed inset-0 z-50 transform ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden`}
+        } transition-transform duration-300 ease-in-out lg:hidden`}
       >
         {/* Overlay */}
         <div

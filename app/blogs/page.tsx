@@ -1,84 +1,82 @@
+"use client";
+import { useBlogs } from "@/hooks/api/blog";
+import { useLangStore } from "@/hooks/useLangStore";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+
+const blogPosts = [
+  {
+    id: 1,
+    title: "How Our Food Drive Impacted 500+ Families",
+    excerpt:
+      "Learn how our annual food drive provided meals to over 500 families in underserved communities this winter season.",
+    date: "May 15, 2023",
+    category: "Community",
+    readTime: "4 min read",
+    image:
+      "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+  },
+  {
+    id: 2,
+    title: "Volunteer Spotlight: Meet Maria Gonzalez",
+    excerpt:
+      "Discover how Maria has dedicated 200+ hours to tutoring children in our education program.",
+    date: "April 28, 2023",
+    category: "Volunteers",
+    readTime: "3 min read",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+  },
+  {
+    id: 3,
+    title: "5 Ways to Get Involved This Summer",
+    excerpt:
+      "Explore meaningful ways you can support our causes during the summer months when need is highest.",
+    date: "April 10, 2023",
+    category: "Get Involved",
+    readTime: "5 min read",
+    image:
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+  },
+  {
+    id: 4,
+    title: "Annual Report: Our Impact in 2022",
+    excerpt:
+      "See the measurable difference we made together last year through our various programs and initiatives.",
+    date: "March 22, 2023",
+    category: "News",
+    readTime: "7 min read",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+  },
+];
+
+const categories = [
+  { name: "All", count: 12 },
+  { name: "Community", count: 4 },
+  { name: "Volunteers", count: 3 },
+  { name: "News", count: 2 },
+  { name: "Research", count: 2 },
+  { name: "Partnerships", count: 1 },
+];
 
 export default function BlogsPage() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "How Our Food Drive Impacted 500+ Families",
-      excerpt:
-        "Learn how our annual food drive provided meals to over 500 families in underserved communities this winter season.",
-      date: "May 15, 2023",
-      category: "Community",
-      readTime: "4 min read",
-      image:
-        "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-    {
-      id: 2,
-      title: "Volunteer Spotlight: Meet Maria Gonzalez",
-      excerpt:
-        "Discover how Maria has dedicated 200+ hours to tutoring children in our education program.",
-      date: "April 28, 2023",
-      category: "Volunteers",
-      readTime: "3 min read",
-      image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-    {
-      id: 3,
-      title: "5 Ways to Get Involved This Summer",
-      excerpt:
-        "Explore meaningful ways you can support our causes during the summer months when need is highest.",
-      date: "April 10, 2023",
-      category: "Get Involved",
-      readTime: "5 min read",
-      image:
-        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-    {
-      id: 4,
-      title: "Annual Report: Our Impact in 2022",
-      excerpt:
-        "See the measurable difference we made together last year through our various programs and initiatives.",
-      date: "March 22, 2023",
-      category: "News",
-      readTime: "7 min read",
-      image:
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-    {
-      id: 5,
-      title: "Partnering with Local Businesses for Change",
-      excerpt:
-        "How our corporate partnerships are creating sustainable solutions to community challenges.",
-      date: "March 5, 2023",
-      category: "Partnerships",
-      readTime: "6 min read",
-      image:
-        "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-    {
-      id: 6,
-      title: "The Science Behind Effective Charity",
-      excerpt:
-        "Research-backed strategies that make our programs more impactful than traditional approaches.",
-      date: "February 18, 2023",
-      category: "Research",
-      readTime: "8 min read",
-      image:
-        "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-    },
-  ];
+  const { lang } = useLangStore();
+  const { data: blogData, isLoading, refetch } = useBlogs({ lang });
 
-  const categories = [
-    { name: "All", count: 12 },
-    { name: "Community", count: 4 },
-    { name: "Volunteers", count: 3 },
-    { name: "News", count: 2 },
-    { name: "Research", count: 2 },
-    { name: "Partnerships", count: 1 },
-  ];
+  const formattedDate = (time: string) => {
+    const date = new Date(time);
+
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0"); // Months are 0-indexed
+    const year = date.getUTCFullYear();
+
+    return `${day}-${month}-${year}`;
+  };
+
+  useEffect(() => {
+    refetch();
+  }, [lang]);
 
   return (
     <div className="min-h-screen">
@@ -165,110 +163,155 @@ export default function BlogsPage() {
             </div>
 
             {/* Blog Posts */}
-            <div className="lg:w-3/4">
-              <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.map((post) => (
-                  <article
-                    key={post.id}
-                    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-6">
-                      <div className="flex items-center text-sm text-gray-500 mb-2">
-                        <span>{post.date}</span>
-                        <span className="mx-2">•</span>
-                        <span>{post.readTime}</span>
-                      </div>
-                      <Link
-                        href={`/blogs/${post.id}`}
-                        className="inline-block bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded mb-3"
-                      >
-                        {post.category}
-                      </Link>
-                      <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
-                        <Link href={`/blogs/${post.id}`}>{post.title}</Link>
-                      </h2>
-                      <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                      <Link
-                        href={`/blogs/${post.id}`}
-                        className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
-                      >
-                        Read More
-                        <svg
-                          className="w-4 h-4 ml-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              <div className="mt-12 flex justify-center">
-                <nav className="flex items-center space-x-2">
-                  <a
-                    href="#"
-                    className="px-3 py-1 rounded-md bg-blue-600 text-white"
-                  >
-                    1
-                  </a>
-                  <a
-                    href="#"
-                    className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
-                  >
-                    2
-                  </a>
-                  <a
-                    href="#"
-                    className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
-                  >
-                    3
-                  </a>
-                  <span className="px-3 py-1">...</span>
-                  <a
-                    href="#"
-                    className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
-                  >
-                    8
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
-                  >
-                    Next
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+            {isLoading ? (
+              <div className=" flex-grow">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {blogPosts.map((post) => (
+                    <article
+                      key={post.id}
+                      className="w-full bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
-                </nav>
+                      <div className=" w-full h-48 bg-gray-200"></div>
+                      <div className="p-6">
+                        <div className="flex items-center text-sm text-gray-500 mb-2"></div>
+                        <Link
+                          href={`/blogs/${post.id}`}
+                          className="inline-block bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded mb-3"
+                        ></Link>
+                        <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
+                          <Link href={`/blogs/${post.id}`}></Link>
+                        </h2>
+                        <p className="text-gray-600 mb-4"></p>
+                        <Link
+                          href={`/blogs/${post.id}`}
+                          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                        >
+                          {/* <svg
+                            className="w-4 h-4 ml-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg> */}
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="lg:w-3/4">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {blogData?.blogs.map((post: TypeOfBlog) => (
+                    <article
+                      key={post.id}
+                      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                    >
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-6">
+                        <div className="flex items-center text-sm text-gray-500 mb-2">
+                          <span>{formattedDate(post.postdate)}</span>
+                          <span className="mx-2">•</span>
+                          <span>{post.timelength}</span>
+                        </div>
+                        <Link
+                          href={`/blogs/${post.id}`}
+                          className="inline-block bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded mb-3"
+                        >
+                          {post.category}
+                        </Link>
+                        <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
+                          <Link href={`/blogs/${post.id}`}>{post.title}</Link>
+                        </h2>
+                        <p className="text-gray-600 mb-4">{post.description}</p>
+                        <Link
+                          href={`/blogs/${post.id}`}
+                          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                        >
+                          Read More
+                          <svg
+                            className="w-4 h-4 ml-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                {/* Pagination */}
+                <div className="mt-12 flex justify-center">
+                  <nav className="flex items-center space-x-2">
+                    <a
+                      href="#"
+                      className="px-3 py-1 rounded-md bg-blue-600 text-white"
+                    >
+                      1
+                    </a>
+                    <a
+                      href="#"
+                      className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
+                    >
+                      2
+                    </a>
+                    <a
+                      href="#"
+                      className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
+                    >
+                      3
+                    </a>
+                    <span className="px-3 py-1">...</span>
+                    <a
+                      href="#"
+                      className="px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
+                    >
+                      8
+                    </a>
+                    <a
+                      href="#"
+                      className="flex items-center px-3 py-1 rounded-md hover:bg-gray-100 transition-colors"
+                    >
+                      Next
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

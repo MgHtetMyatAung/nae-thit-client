@@ -2,6 +2,27 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
+const threeKeys = [
+  {
+    title: "Hepatitis",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+    img: "/source/Hepatitis.png",
+  },
+  {
+    title: "NCD",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+    img: "/source/NCD.png",
+  },
+  {
+    title: "ANC/MCH",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+    img: "/source/ANC_MCH.png",
+  },
+];
+
 export default function OurServicesPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -112,7 +133,7 @@ export default function OurServicesPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-10">
       {/* Hero Section */}
       <section className="relative bg-blue-900 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -127,7 +148,38 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      <section className=" py-10 bg-gray-50">
+      <section className=" py-16">
+        <div className=" container">
+          <h2 className=" text-3xl font-bold text-center">
+            We primarily focuses on{" "}
+            <span className=" text-4xl text-primary">3 key</span> health
+            priorities with{" "}
+            <span className="text-4xl text-primary">
+              high national prevalence rates.
+            </span>
+          </h2>
+        </div>
+      </section>
+
+      <section className=" py-5">
+        <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {threeKeys.map((item, idx) => (
+            <div key={idx} className="text-center p-7 shadow border rounded-lg">
+              <Image
+                src={item.img}
+                alt={item.title}
+                width={100}
+                height={100}
+                className=" mx-auto"
+              />
+              <h3 className=" text-2xl font-bold mb-3 ">{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className=" py-16 bg-gray-50">
         <div className=" container">
           {/* <div className="relative py-8 max-w-[200px] mx-auto">
             <div
@@ -143,7 +195,7 @@ export default function OurServicesPage() {
             </div>
           </div> */}
           <h3 className="text-3xl font-bold text-gray-900 mb-14 text-center">
-            Explore Our <span className="text-yellow-400">Services</span>
+            Our <span className="text-yellow-400">Services</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -178,6 +230,53 @@ export default function OurServicesPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className=" order-2 lg:order-1">
+            <h2 className="text-3xl font-bold mb-6">
+              Specialist trained{" "}
+              <span className=" text-primary">Specialized Care</span>
+            </h2>
+            <div className="space-y-6  text-gray-700">
+              <p>
+                In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise
+                was established and provides quality healthcare services to the
+                community by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar is a
+                chain of clinics that fill the gap in the health services needed
+                in the community by giving quality healthcare services at
+                subsidized prices in innovative ways. We provide quality
+              </p>
+            </div>
+          </div>
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg order-1 lg:order-2"></div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg"></div>
+          <div className="">
+            <h2 className="text-3xl font-bold mb-2 text-primary leading-10">
+              HOW CAN WE MAKE IT <br />
+              <span className=" text-secondary text-4xl">AFFORDABLE ?</span>
+            </h2>
+            <h3 className=" text-2xl font-semibold mb-3">
+              Balancing <span className=" text-primary">cost-efficiency</span>{" "}
+              with maintaining{" "}
+              <span className=" text-primary">high standards of care</span>
+            </h3>
+            <div className="space-y-6 text-gray-700">
+              <p>
+                High operational costs, limited access to affordable
+                technologies, economic disparities among patients, systemic
+                issues like inadequate healthcare funding, regulatory barriers,
+                and workforce shortages.
+              </p>
+            </div>
           </div>
         </div>
       </section>

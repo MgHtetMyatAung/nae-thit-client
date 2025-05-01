@@ -11,7 +11,15 @@ type TypeOfBlog = {
   title: string;
   description: string;
   image: string;
-  category: TypeOfCategory;
+  timelength: string;
+  category: string;
+  postdate: string;
   createdAt: string;
   updatedAt: string;
+};
+
+type TypeOfBlogData = {
+  success: boolean;
+  count: number;
+  blogs: TypeOfBlog[];
 };

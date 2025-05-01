@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: "/api/:path*",
         // destination: "https://salpyarzay-innovix.odoo.com/api/:path*", // for production
-        destination: "https://dummyjson.com/:path*", // for development
+        destination: "https://naethitasanv2.onrender.com/:path*", // for development
       },
     ];
   },
