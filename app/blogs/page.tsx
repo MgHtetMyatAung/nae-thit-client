@@ -1,6 +1,8 @@
 "use client";
 import { useBlogs } from "@/hooks/api/blog";
 import { useLangStore } from "@/hooks/useLangStore";
+import useTranslation from "@/hooks/useTranslation";
+import { formattedDate } from "@/libs/format.date";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
@@ -62,17 +64,8 @@ const categories = [
 
 export default function BlogsPage() {
   const { lang } = useLangStore();
+  const { t } = useTranslation();
   const { data: blogData, isLoading, refetch } = useBlogs({ lang });
-
-  const formattedDate = (time: string) => {
-    const date = new Date(time);
-
-    const day = String(date.getUTCDate()).padStart(2, "0");
-    const month = String(date.getUTCMonth() + 1).padStart(2, "0"); // Months are 0-indexed
-    const year = date.getUTCFullYear();
-
-    return `${day}-${month}-${year}`;
-  };
 
   useEffect(() => {
     refetch();
@@ -243,7 +236,7 @@ export default function BlogsPage() {
                           href={`/blogs/${post.id}`}
                           className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
                         >
-                          Read More
+                          {t("read_more")}
                           <svg
                             className="w-4 h-4 ml-1"
                             fill="none"

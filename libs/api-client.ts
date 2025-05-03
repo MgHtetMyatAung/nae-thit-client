@@ -10,8 +10,14 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 // };
 
 export const apiClient = {
-  get: async <T>(endpoint: string): Promise<T> => {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`);
+  get: async <T>(
+    endpoint: string,
+    params?: Record<string, any>
+  ): Promise<T> => {
+    const queryString = params
+      ? `?${new URLSearchParams(params).toString()}`
+      : "";
+    const response = await fetch(`${API_BASE_URL}${endpoint}${queryString}`);
     if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
     }

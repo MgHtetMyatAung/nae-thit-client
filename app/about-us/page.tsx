@@ -9,7 +9,7 @@ export default function AboutUsPage() {
     {
       name: "Dr. Nay Nyi Nyi Lwin",
       role: "Managing Director",
-      image: "/profile/dr_zan.png",
+      image: "",
       bio: "Michael oversees all charitable programs with expertise in community development.",
     },
     {
