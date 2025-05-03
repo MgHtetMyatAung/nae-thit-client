@@ -6,19 +6,19 @@ const threeKeys = [
   {
     title: "Hepatitis",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+      "Comprehensive care and prevention through vaccination, screening, counseling, and treatment for Hepatitis B and C.",
     img: "/source/Hepatitis.png",
   },
   {
     title: "NCD",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+      "Ensuring early detection, effective treatment to reduce complications and disability, lifelong management while promoting healthy lifestyles.",
     img: "/source/NCD.png",
   },
   {
     title: "ANC/MCH",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae laborum quae nesciunt provident aliquam blanditiis.",
+      "Ensuring maternal and child health through quality antenatal care, safe deliveries, immunization and postpartum support.",
     img: "/source/ANC_MCH.png",
   },
 ];

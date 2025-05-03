@@ -234,7 +234,11 @@ export default function BlogsPage() {
                         <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
                           <Link href={`/blogs/${post.id}`}>{post.title}</Link>
                         </h2>
-                        <p className="text-gray-600 mb-4">{post.description}</p>
+                        <p className="text-gray-600 mb-4">
+                          {post.description.length > 100
+                            ? post.description.slice(0, 100) + " ..."
+                            : post.description}
+                        </p>
                         <Link
                           href={`/blogs/${post.id}`}
                           className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"

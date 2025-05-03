@@ -12,15 +12,15 @@ export default function HomeIntro() {
           Introducing <span className=" text-primary">Nae Thit Kyan Mar</span>
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque minima
-          aut architecto neque, nam ut exercitationem atque deleniti saepe culpa
-          officiis! Sequi, vitae corrupti alias ullam dolor consequatur eius rem
-          recusandae blanditiis molestias, odit ipsa deleniti. Atque cupiditate,
-          Nisi sunt quae deleniti soluta dolorem. Distinctio libero voluptates
-          id fuga vitae provident temporibus cupiditate tempora laudantium et,
-          ut aspernatur natus velit exercitationem hic recusandae neque illo
-          similique. Nisi dolorum perspiciatis magni necessitatibus similique
-          explicabo corporis cumque...
+          In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise, was
+          established and provides quality healthcare services to the community
+          by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar is a chain of clinics
+          that fill the gap in the health services needed in the community by
+          giving quality healthcare services at subsidized prices in innovative
+          ways. We provide quality healthcare services with affordable prices to
+          the community in urban and peri-urban areas. The aim of Nae Thit Kyan
+          Mar Clinics is to provide value, not only to the patients but also to
+          the community, changing lives and better social impact...
         </p>
         <div className="container mx-auto text-center mt-7">
           <Link

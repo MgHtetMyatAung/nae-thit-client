@@ -7,19 +7,19 @@ import React from "react";
 const services = [
   {
     id: 1,
-    name: "Primary Care",
+    name: "Subscidized Healthcare",
     img: "/source/heath_care.png",
     link: "/our-services",
   },
   {
     id: 2,
-    name: "Specialist Care",
+    name: "Telehealth",
     img: "/source/teleheath_care.png",
     link: "/our-services",
   },
   {
     id: 3,
-    name: "Emergency Care",
+    name: "Specialist trained Specialize Care",
     img: "/source/special_care.png",
     link: "/our-services",
   },

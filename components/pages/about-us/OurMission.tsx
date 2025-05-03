@@ -8,34 +8,44 @@ import useTranslation from "@/hooks/useTranslation";
 
 const missions = [
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Provide Accessible and High-Quality Care",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Ensure that high-quality healthcare services are accessible to all, particularly underserved communities, through innovative and patient-centered approaches.",
   },
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Drive Innovation in Healthcare Delivery",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Continuously explore and implement cutting-edge healthcare technologies and practices to improve patient outcomes and operational efficiency.",
   },
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Promote Sustainable Healthcare Practices",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Integrate sustainable practices across all operations to maintain financial viability and environmental stewardship while delivering exceptional healthcare.",
   },
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Empower Healthcare Professionals",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Invest in the continuous education, training, and well-being of healthcare professionals to ensure the highest standard of care.",
   },
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Foster Community Health and Well-being",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Engage in community outreach and health education programs to promote preventive care and improve the overall health and well-being of the population.",
   },
   {
-    title: "Lorem ipsum dolor, sit amet consectetur",
+    title: "Ensure Ethical and Compassionate Care",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, officiis esse? Assumenda fugit doloremque illum?",
+      "Uphold the highest ethical standards and compassion in all interactions with patients, staff, and partners, prioritizing their dignity and respect.",
+  },
+  {
+    title: "Collaborate for Broader Impact",
+    description:
+      "Partner with local, regional, and international organizations to leverage resources, share knowledge, and amplify the impact on public health.",
+  },
+  {
+    title: "Monitor and Evaluate for Continuous Improvement",
+    description:
+      "Implement robust monitoring and evaluation mechanisms to continuously assess and enhance the quality and effectiveness of healthcare services and organizational practices.",
   },
 ];
 

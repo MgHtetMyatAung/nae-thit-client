@@ -1,6 +1,7 @@
 "use client";
 import useTranslation from "@/hooks/useTranslation";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function HomeAboutUs() {
@@ -39,16 +40,21 @@ export default function HomeAboutUs() {
               Background
             </h2>
             <p className=" text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis quae, consectetur adipisicing elit. Blanditiis quae,
-              consectetur adipisicing elit. Blanditiis quae, perspiciatis maxime
-              labore, cum aspernatur tempora molestias autem atque hic dolores
-              aliquam nisi architecto veniam tempore corporis quis laudantium.
-              Qui, neque. Rem mollitia consequuntur culpa...
+              In Myanmar, a few organizations are working under the social
+              enterprise model, primarily adopting six key frameworks: credit
+              unions, community-based organizations, non-governmental
+              organizations with commercial arms, social firms, cooperatives,
+              fair trade, and microfinance. For the betterment of the health of
+              the people in Myanmar, Nae Thit Co.,Ltd By Guarantee, a social
+              enterprise, was established in 2022 and provides quality
+              healthcare services focusing on...
             </p>
-            <button className="text-primary-dark mt-4 text-sm">
+            <Link
+              href={"/about-us#background"}
+              className="text-primary-dark mt-4 text-sm inline-block font-medium"
+            >
               {t("read_more")}
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -60,17 +66,16 @@ export default function HomeAboutUs() {
               What is Social Enterprise?
             </h3>
             <p className=" text-gray-700">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
-              accusantium voluptatibus, consectetur adipisicing elit. Blanditiis
-              quae, consectetur adipisicing elit. Blanditiis quae, consectetur
-              adipisicing elit. Blanditiis quae, perferendis porro error a,
-              impedit, sed laudantium nisi incidunt minima! Illo, vel quae
-              consequuntur ab error eum culpa soluta enim, ullam hic a
-              dignissimos saepe odio, vitae quibusdam dicta?...
+              A social enterprise is a business that exists to solve social,
+              environmental, or community problems — and does so by selling
+              products or services. Unlike charities that rely mainly on
+              donations, social enterprises make their own money through
+              trading, but they reinvest most or all of their profits into their
+              mission to create real, lasting impact.
             </p>
-            <button className="text-primary-dark mt-4 text-sm">
+            {/* <button className="text-primary-dark mt-4 text-sm">
               {t("read_more")}
-            </button>
+            </button> */}
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
             <Image

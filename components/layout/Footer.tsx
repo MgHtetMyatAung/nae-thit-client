@@ -7,24 +7,28 @@ export default function Footer() {
   const footerLinks = [
     {
       title: "Quick Links",
-      links: ["Home", "About Us", "Services", "Team", "Blog"],
+      links: [
+        { title: "Home", link: "/" },
+        { title: "About Us", link: "/about-us" },
+        { title: "Our Services", link: "/our-services" },
+        { title: "Blogs", link: "/blogs" },
+        { title: "Contact Us", link: "/contact-us" },
+      ],
     },
     {
       title: "Services",
       links: [
-        "Donation",
-        "Fundraising",
-        "Volunteer",
-        "Charity Events",
-        "Causes",
+        { title: "Subscidized Healthcare" },
+        { title: "Telehealth" },
+        { title: "Specialist trained Specialize Care" },
       ],
     },
     {
       title: "Contact Us",
       links: [
-        "123 Charity St, City",
-        "info@charities.org",
-        "+1 (555) 123-4567",
+        { title: "123 Charity St, City" },
+        { title: "info@charities.org" },
+        { title: "+1 (555) 123-4567" },
       ],
     },
   ];
@@ -86,14 +90,14 @@ export default function Footer() {
             <div key={section.title}>
               <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                {section.links.map((item: any, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={item.link || "#"}
                       className="text-gray-100 hover:text-white transition-colors"
                     >
-                      {link}
-                    </a>
+                      {item.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
