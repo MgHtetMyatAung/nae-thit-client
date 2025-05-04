@@ -1,12 +1,15 @@
+"use client";
 import { social_links } from "@/constant/data";
+import useTranslation from "@/hooks/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const footerLinks = [
     {
-      title: "Quick Links",
+      title: "quick_links",
       links: [
         { title: "Home", link: "/" },
         { title: "About Us", link: "/about-us" },
@@ -16,7 +19,7 @@ export default function Footer() {
       ],
     },
     {
-      title: "Services",
+      title: "our_services",
       links: [
         { title: "Subscidized Healthcare" },
         { title: "Telehealth" },
@@ -24,7 +27,7 @@ export default function Footer() {
       ],
     },
     {
-      title: "Contact Us",
+      title: "contact_us",
       links: [
         { title: "123 Charity St, City" },
         { title: "info@charities.org" },
@@ -58,9 +61,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div className=" col-span-2 lg:col-span-1">
-            <h3 className="text-xl font-semibold mb-4">
-              Nae Thit Social Enterprise
-            </h3>
+            <h3 className="text-xl font-semibold mb-4">{t("title")}</h3>
             {/* <p className="text-gray-300 mb-4">
               We are a non-profit organization dedicated to helping those in
               need through various charitable programs and initiatives.
@@ -88,7 +89,7 @@ export default function Footer() {
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
+              <h4 className="text-lg font-semibold mb-4">{t(section.title)}</h4>
               <ul className="space-y-2">
                 {section.links.map((item: any, idx) => (
                   <li key={idx}>

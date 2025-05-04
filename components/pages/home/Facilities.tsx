@@ -1,5 +1,5 @@
-// components/FacilitiesSlider.tsx
 "use client";
+// components/FacilitiesSlider.tsx
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,8 +7,9 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import useTranslation from "@/hooks/useTranslation";
 import { useFacilities } from "@/hooks/api/facilities";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { useLangStore } from "@/hooks/useLangStore";
 
 const facilities = [
   { id: 1, name: "NTKM – 1", img: "/imgs/ntkm_1.png", hours: "8am - 5pm" },
@@ -19,10 +20,14 @@ const facilities = [
 ];
 
 export default function FacilitiesSlider() {
-  const { data, isLoading } = useFacilities({});
+  const { lang } = useLangStore();
+  const { data, refetch, isLoading } = useFacilities({});
   const { t } = useTranslation();
   const [activeFacilities, setActiveFacilities] =
     useState<TypeOfFacilities | null>(null);
+  useEffect(() => {
+    refetch();
+  }, [lang]);
   if (isLoading) {
     return (
       <div className=" container py-10">
@@ -50,40 +55,42 @@ export default function FacilitiesSlider() {
           <h2 className="text-3xl font-bold text-gray-900 mb-14 text-center">
             Explore Our <span className="text-yellow-500">Facilities</span>
           </h2>
-          <Swiper
-            spaceBetween={20}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            modules={[Pagination]}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              // 1280: { slidesPerView: 4 },
-            }}
-            className="!pb-10"
-          >
-            {data.facilities.map((f: TypeOfFacilities) => (
-              <SwiperSlide key={f._id}>
-                <div
-                  className="rounded overflow-hidden shadow-lg"
-                  onClick={() => setActiveFacilities(f)}
-                >
-                  <img
-                    src={"/imgs/ntkm_2.png"}
-                    alt={f.clinicname}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold">{f.clinicname}</h3>
-                    <p className="text-sm text-gray-500">
-                      Opening Hours: {f.openinghr}
-                    </p>
+          {data ? (
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              modules={[Pagination]}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                // 1280: { slidesPerView: 4 },
+              }}
+              className="!pb-10"
+            >
+              {data?.facilities?.map((f: TypeOfFacilities) => (
+                <SwiperSlide key={f._id}>
+                  <div
+                    className="rounded overflow-hidden shadow-lg"
+                    onClick={() => setActiveFacilities(f)}
+                  >
+                    <img
+                      src={"/imgs/ntkm_2.png"}
+                      alt={f.clinicname}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold">{f.clinicname}</h3>
+                      <p className="text-sm text-gray-500">
+                        Opening Hours: {f.openinghr}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : null}
         </div>
       </div>
       {activeFacilities?._id ? (
