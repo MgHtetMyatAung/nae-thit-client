@@ -16,7 +16,10 @@ export default function HeroBanner() {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl drop-shadow-md">
+          <h1
+            className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl drop-shadow-md"
+            style={{ lineHeight: "1.2" }}
+          >
             Providing Quality Healthcare with Affordable Solutions
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-white drop-shadow-md">

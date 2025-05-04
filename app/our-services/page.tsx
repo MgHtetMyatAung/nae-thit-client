@@ -1,4 +1,6 @@
 "use client";
+import DaungMyiSection from "@/components/pages/our-services/DaungMyiSection";
+import OurServiceSection from "@/components/pages/our-services/OurServiceSection";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -164,7 +166,10 @@ export default function OurServicesPage() {
       <section className=" py-5">
         <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {threeKeys.map((item, idx) => (
-            <div key={idx} className="text-center p-7 shadow border rounded-lg">
+            <div
+              key={idx}
+              className="text-center p-7 shadow border rounded-3xl"
+            >
               <Image
                 src={item.img}
                 alt={item.title}
@@ -179,60 +184,9 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      <section className=" py-16 bg-gray-50">
-        <div className=" container">
-          {/* <div className="relative py-8 max-w-[200px] mx-auto">
-            <div
-              className="absolute inset-0 flex items-center"
-              aria-hidden="true"
-            >
-              <div className="w-full border-t-2 border-gray-300"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-white px-4 font-medium tracking-wider">
-                Our Services
-              </span>
-            </div>
-          </div> */}
-          <h3 className="text-3xl font-bold text-gray-900 mb-14 text-center">
-            Our <span className="text-yellow-400">Services</span>
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              "Consultation and medical care",
-              "Pharmacy",
-              "Online pharmacy",
-              "Vaccination",
-              "Telehealth",
-              "Laboratory tests",
-              "ECG and USG",
-              "Family planning",
-              "Subsidized healthcare",
-              // "Medical check-up",
-              // "Dental care",
-              // "Eye care",
-            ].map((service, index) => (
-              <div
-                key={index}
-                className={`group rounded-lg border px-6 py-10 text-center hover:bg-primary hover:text-white`}
-              >
-                <Image
-                  src={"/icons/building.png"}
-                  alt={service}
-                  width={30}
-                  height={30}
-                  className="mx-auto mb-4 filter group-hover:brightness-[5]"
-                />
-                <h3 className="font-semibold text-lg">{service}</h3>
-                <p className=" text-gray-500 group-hover:text-gray-100">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi, adipisci.
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <OurServiceSection />
+
+      <DaungMyiSection />
 
       <section className="py-16 bg-white">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">

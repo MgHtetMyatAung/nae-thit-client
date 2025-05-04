@@ -27,6 +27,8 @@ const config: Config = {
         },
         base: {
           white: "#ffffff",
+          ddm: "#6ac5ac",
+          ddmdark: "#49B89B",
         },
       },
       container: {

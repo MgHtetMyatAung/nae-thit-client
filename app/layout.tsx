@@ -40,6 +40,7 @@ export default async function LocaleLayout({
     <html
       lang="en"
       className={`${myanmarFont.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+      suppressHydrationWarning
     >
       <head>
         {/* <link rel="icon" href="/source/logo.png" /> */}

@@ -94,20 +94,24 @@ export default function FacilitiesSlider() {
         </div>
       </div>
       {activeFacilities?._id ? (
-        <div className="  w-full h-screen fixed top-0 left-0 grid place-items-center bg-gray-700 bg-opacity-80 z-50">
+        <div className="  w-full h-screen fixed top-0 left-0 grid place-items-center bg-gray-800 bg-opacity-80 z-50">
           <div className="container ">
             <div className="w-full md:w-[450px] p-3 rounded-lg bg-white relative mx-auto">
               <button
-                className="  absolute top-0 right-0 bg-white p-2 rounded-full"
+                className="  absolute -top-3 -right-3 bg-primary p-2 rounded-full"
                 onClick={() => setActiveFacilities(null)}
               >
-                <X size={20} />
+                <X size={20} color="white" />
               </button>
-              <img
-                src={"/imgs/ntkm_2.png"}
-                alt={activeFacilities.clinicname}
-                className="w-full h-48 object-cover"
-              />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d238.68798393752022!2d96.13026278018464!3d16.825971968622017!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c194ca12fe260b%3A0x5ec3dae9d33b5892!2sM-Tower!5e0!3m2!1sen!2smm!4v1745520478736!5m2!1sen!2smm"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
               <div className="p-4">
                 <h3 className="text-lg font-semibold">
                   {activeFacilities.clinicname}
