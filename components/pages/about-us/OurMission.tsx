@@ -69,10 +69,11 @@ export default function OurMission() {
             1280: { slidesPerView: 4 },
           }}
           className="!pb-10"
+          style={{ height: "290px" }}
         >
           {missions.map((item, idx) => (
             <SwiperSlide key={idx} className="">
-              <div className="bg-white px-6 py-10 rounded-xl text-center shadow relative">
+              <div className="bg-white px-6 py-10 rounded-xl text-center shadow relative h-full">
                 <h4 className="font-semibold mb-3">{item.title}</h4>
                 <p className="italic text-gray-700 ">{item.description}</p>
                 {/* <p className="text-sm text-gray-500">{t.location}</p> */}

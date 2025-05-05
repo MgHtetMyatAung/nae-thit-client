@@ -1,7 +1,8 @@
+import AboutIntro from "@/components/pages/about-us/AboutIntro";
+import AboutUsBanner from "@/components/pages/about-us/AboutUsBanner";
 import OurMission from "@/components/pages/about-us/OurMission";
 import OurValues from "@/components/pages/about-us/OurValues";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default function AboutUsPage() {
@@ -69,49 +70,7 @@ export default function AboutUsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-blue-900 text-white py-24">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-primary">
-            About Us
-          </h1>
-          <p className="text-xl max-w-2xl text-center mx-auto">
-            Learn about our mission, values, and the team dedicated to creating
-            positive change.
-          </p>
-        </div>
-      </section>
-
-      {/* About Description */}
-      <section className="py-16 bg-white" id="background">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="">
-            <h2 className="text-3xl font-bold text-accent-orange mb-6">
-              Background
-            </h2>
-            <div className="space-y-6 font-medium text-gray-700">
-              <p>
-                In Myanmar, a few organizations are working under the social
-                enterprise model, primarily adopting six key frameworks: credit
-                unions, community-based organizations, non-governmental
-                organizations with commercial arms, social firms, cooperatives,
-                fair trade, and microfinance. For the betterment of the health
-                of the people in Myanmar, Nae Thit Co.,Ltd By Guarantee, a
-                social enterprise, was established in 2022 and provides quality
-                healthcare services focusing on Reproductive, Maternal, Newborn,
-                and Child Health (RMNCH), Non-communicable diseases (NCDs) and
-                hepatitis to the community by forming Nae Thit Kyan Mar. Nae
-                Thit Social Enterprise’s mission is to create community value,
-                transform lives, and drive sustainable social impact. Beyond
-                healthcare, the enterprise plans to expand its reach into
-                education, business development, and environmental conservation,
-                amplifying its positive influence across multiple sectors.
-              </p>
-            </div>
-          </div>
-          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg"></div>
-        </div>
-      </section>
+      <AboutUsBanner />
 
       <section className=" bg-primary py-6 md:py-10">
         <div className="container">
@@ -126,36 +85,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className=" py-16" id="intro">
-        <div className=" container mx-auto">
-          <h2 className=" text-xl lg:text-2xl font-bold text-center mb-3">
-            Introducing{" "}
-            <span className=" text-primary-dark">Nae Thit Kyan Mar</span>
-          </h2>
-          <p>
-            In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise, was
-            established and provides quality healthcare services to the
-            community by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar is a chain
-            of clinics that fill the gap in the health services needed in the
-            community by giving quality healthcare services at subsidized prices
-            in innovative ways. We provide quality healthcare services with
-            affordable prices to the community in urban and peri-urban areas.
-            The aim of Nae Thit Kyan Mar Clinics is to provide value, not only
-            to the patients but also to the community, changing lives and better
-            social impact. The very first clinic of Nae Thit Kyan Mar is the
-            clinic of South Okkalapa Township, Yangon formed in September 2022.
-            Then, Nae Thit Kyan Mar developed its second community clinic in
-            Dagon Seikkan Township, Yangon and provides the needs of primary
-            health care, maternal and child health care, family health care
-            services and tele health care services with subsidized prices.
-            Moreover, Nae Thit Kyan Mar provides the quality medicines to the
-            community and its business partners at fair prices. In 2023 July,
-            Nae Thit Kyan Mar merged with B.K.Kee clinic and B.K.Kee clinic in
-            South Dagon Township became the 3rd community clinic of Nae Thit
-            Clinic chains.
-          </p>
-        </div>
-      </section>
+      <AboutIntro />
 
       <section className=" bg-white md:py-10 shadow">
         <div className=" container mx-auto flex justify-center items-center gap-5">

@@ -23,10 +23,7 @@ export default function ContactUsPage() {
         </svg>
       ),
       title: "Phone",
-      details: [
-        "General Inquiries: +1 (555) 123-4567",
-        "Donation Support: +1 (555) 987-6543",
-      ],
+      details: ["+95 9 775 919 699", "+95 9 771 876 404"],
     },
     {
       icon: (
@@ -76,7 +73,9 @@ export default function ContactUsPage() {
         </svg>
       ),
       title: "Address",
-      details: ["123 Charity Avenue", "Hope City, HC 12345", "United States"],
+      details: [
+        "No. 527, Level - 8, Unit 08 - 03, Ward 7, M-Tower, Pyay Road, Kamaryut Township, Yangon.",
+      ],
     },
     {
       icon: (
@@ -139,7 +138,7 @@ export default function ContactUsPage() {
                     </div>
                     <ul className="space-y-2">
                       {method.details.map((detail, i) => (
-                        <li key={i} className="text-gray-600">
+                        <li key={i} className="text-gray-600 font-medium">
                           {detail}
                         </li>
                       ))}
