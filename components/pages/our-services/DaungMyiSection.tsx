@@ -116,7 +116,7 @@ export default function DaungMyiSection() {
               </ul>
               <div>
                 <Link
-                  href={"viber://contact?number=+959773371118"}
+                  href={"viber://chat?number=%2B959773371118"}
                   className="px-8 py-3 border bg-base-ddm border-white text-base font-medium rounded-md text-white hover:bg-base-ddmdark hover:text-white md:py-4 md:text-lg md:px-10 transition duration-300"
                 >
                   Book Now
