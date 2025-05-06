@@ -14,13 +14,13 @@ const threeKeys = [
   {
     title: "NCD (Diabetes, Hypertension)",
     description:
-      "Ensuring early detection, effective treatment to reduce complications and disability, lifelong management while promoting healthy lifestyles.",
+      "Ensuring early detection, effective treatment, lifelong management while promoting healthy lifestyles to prevent complications, disability, and premature death.",
     img: "/source/NCD.png",
   },
   {
     title: "RMNCH",
     description:
-      "Ensuring maternal and child health through quality antenatal care, safe deliveries, immunization and postpartum support.",
+      "Ensuring access to reproductive health services, maternal and child health through quality antenatal care, safe deliveries, immunization  and postpartum support.",
     img: "/source/ANC_MCH.png",
   },
 ];

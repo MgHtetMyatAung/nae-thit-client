@@ -4,38 +4,38 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 import useTranslation from "@/hooks/useTranslation";
 
 const testimonials = [
   {
     id: 1,
-    name: "Daw Hla Hla",
-    location: "NTKM-2",
+    name: "Ma Hnin Thwe Thwe Oo",
+    location: "RMNCH Patient",
     message:
-      "Nobis voluptatem magni doloribus voluptate culpa dolor est neque. Nobis voluptatem magni doloribus voluptate culpa dolor est neque",
+      "I felt relieved and happy after first time talking with the doctor and staffs at Nae Thit Kyan Mar – 3 ",
   },
   {
     id: 2,
-    name: "U Mya",
-    location: "NTKM-2",
+    name: "U Than Htike",
+    location: "NCD Patient",
     message:
-      "Nobis voluptatem magni doloribus voluptate culpa dolor est neque. Nobis voluptatem magni doloribus voluptate culpa dolor est neque",
+      "I thought I was going to die… but Dr. Thandar Phyo and the NTKM Clinic never gave up on me. They treated me with dignity, respect, and care. I am alive today because of them.",
   },
   {
     id: 3,
-    name: "Daw Mya",
-    location: "NTKM-2",
+    name: "Daw Thwin",
+    location: "NCD Patient",
     message:
-      "Nobis voluptatem magni doloribus voluptate culpa dolor est neque. Nobis voluptatem magni doloribus voluptate culpa dolor est neque",
+      "Long-term treatment at a private clinic isn’t financially possible for us, NTKM clinic offers treatment at affordable prices. That’s why we chose it, and we have been coming for three years now. The clinic staff are very kind and helpful and provide excellent care. I feel better now.",
   },
   {
     id: 4,
-    name: "U Tun",
-    location: "NTKM-2",
+    name: "U Aung Min",
+    location: "NCD Patient",
     message:
-      "Nobis voluptatem magni doloribus voluptate culpa dolor est neque. Nobis voluptatem magni doloribus voluptate culpa dolor est neque",
+      "The staff are professional, careful, and patient. They help me manage and treat my illnesses. If I went to a private clinic, I wouldn’t be able to afford it.",
   },
 ];
 
@@ -64,7 +64,13 @@ export default function TestimonialsSlider() {
           spaceBetween={20}
           slidesPerView={1}
           pagination={{ clickable: true }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          // autoplay={{
+          //   delay: 2500,
+          //   disableOnInteraction: false,
+          // }}
+          loop={true}
+          navigation={true}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },

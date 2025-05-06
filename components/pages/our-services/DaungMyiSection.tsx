@@ -4,6 +4,13 @@ import Link from "next/link";
 import React from "react";
 
 export default function DaungMyiSection() {
+  const handleClick = () => {
+    window.location.href = "viber://chat?number=%2B959773371118";
+
+    setTimeout(() => {
+      window.location.href = "tel:+959773371118";
+    }, 1500);
+  };
   return (
     <section className=" relative">
       <div>
@@ -115,12 +122,12 @@ export default function DaungMyiSection() {
                 </li>
               </ul>
               <div>
-                <Link
-                  href={"viber://chat?number=%2B959773371118"}
+                <button
+                  onClick={handleClick}
                   className="px-8 py-3 border bg-base-ddm border-white text-base font-medium rounded-md text-white hover:bg-base-ddmdark hover:text-white md:py-4 md:text-lg md:px-10 transition duration-300"
                 >
                   Book Now
-                </Link>
+                </button>
               </div>
             </div>
           </div>

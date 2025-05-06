@@ -10,14 +10,14 @@ const services = [
     name: "Subscidized Healthcare",
     img: "/source/heath_care.png",
     link: "/our-services",
-    desc: "NTKM trains & empowers non-specialist doctors (e.g., MRCP-holding GPs) to deliver specialist-level care using standardized, evidence-based protocols.",
+    desc: "We provide subsidized healthcare through creating affordable subscription models designed to ease the cost burden of long-term care. Our programs support maternal and child health, reproductive health services, chronic diseases management, and general outpatient services, ensuring equitable access for patients in need.",
   },
   {
     id: 2,
     name: "Telehealth",
     img: "/source/teleheath_care.png",
     link: "/our-services",
-    desc: "NTKM trains & empowers non-specialist doctors (e.g., MRCP-holding GPs) to deliver specialist-level care using standardized, evidence-based protocols.",
+    desc: "We offer convenient virtual care with dedicated Patient Journey Partners (PJP) for smooth, connected care. No app download required, and accessible with or without internet—simply through Viber Platform.",
   },
   {
     id: 3,

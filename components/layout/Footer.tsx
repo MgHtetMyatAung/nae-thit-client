@@ -29,9 +29,10 @@ export default function Footer() {
     {
       title: "contact_us",
       links: [
-        { title: "123 Charity St, City" },
-        { title: "info@charities.org" },
-        { title: "+1 (555) 123-4567" },
+        // { title: "123 Charity St, City" },
+        { title: "info@naethit.org" },
+        { title: "+95 9 771 876 404" },
+        { title: "+95 9 775 919 699" },
       ],
     },
   ];

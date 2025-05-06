@@ -23,7 +23,7 @@ export default function ContactUsPage() {
         </svg>
       ),
       title: "Phone",
-      details: ["+95 9 775 919 699", "+95 9 771 876 404"],
+      details: ["+95 9 771 876 404", "+95 9 775 919 699"],
     },
     {
       icon: (
@@ -43,11 +43,7 @@ export default function ContactUsPage() {
         </svg>
       ),
       title: "Email",
-      details: [
-        "General: info@charities.org",
-        "Donations: donate@charities.org",
-        "Volunteers: volunteer@charities.org",
-      ],
+      details: ["info@naethit.org"],
     },
     {
       icon: (
@@ -74,7 +70,8 @@ export default function ContactUsPage() {
       ),
       title: "Address",
       details: [
-        "No. 527, Level - 8, Unit 08 - 03, Ward 7, M-Tower, Pyay Road, Kamaryut Township, Yangon.",
+        "Head Office 1 - No. 661, Innwa 19th Street (A), Ward 6, South Okkalapa Township, Yangon.",
+        "Head Office 2 - No. 527, Level - 8, Unit 08 - 03, Ward 7, M-Tower, Pyay Road, Kamaryut Township, Yangon.",
       ],
     },
     {
@@ -97,7 +94,7 @@ export default function ContactUsPage() {
       title: "Office Hours",
       details: [
         "Monday-Friday: 9:00 AM - 5:00 PM",
-        "Saturday: 10:00 AM - 2:00 PM",
+        "Saturday: 9:00 AM - 12:00 PM",
         "Sunday: Closed",
       ],
     },

@@ -55,11 +55,11 @@ const blogPosts = [
 
 const categories = [
   { name: "All", count: 12 },
-  { name: "Community", count: 4 },
-  { name: "Volunteers", count: 3 },
-  { name: "News", count: 2 },
-  { name: "Research", count: 2 },
-  { name: "Partnerships", count: 1 },
+  { name: "Articles", count: 4 },
+  { name: "Events", count: 3 },
+  // { name: "News", count: 2 },
+  // { name: "Research", count: 2 },
+  // { name: "Partnerships", count: 1 },
 ];
 
 export default function BlogsPage() {
@@ -105,15 +105,15 @@ export default function BlogsPage() {
                           className="flex justify-between items-center py-2 px-3 rounded hover:bg-gray-100 transition-colors"
                         >
                           <span>{category.name}</span>
-                          <span className="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded-full">
+                          {/* <span className="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded-full">
                             {category.count}
-                          </span>
+                          </span> */}
                         </a>
                       </li>
                     ))}
                   </ul>
 
-                  <h3 className="text-xl font-bold mt-8 mb-4">Popular Tags</h3>
+                  {/* <h3 className="text-xl font-bold mt-8 mb-4">Popular Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Donation",
@@ -131,7 +131,7 @@ export default function BlogsPage() {
                         {tag}
                       </a>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* <div className="mt-8 p-4 bg-blue-50 rounded-lg">
                     <h4 className="font-semibold mb-2">
@@ -260,7 +260,7 @@ export default function BlogsPage() {
                   </div>
 
                   {/* Pagination */}
-                  <div className="mt-12 flex justify-center">
+                  {/* <div className="mt-12 flex justify-center">
                     <nav className="flex items-center space-x-2">
                       <a
                         href="#"
@@ -308,7 +308,7 @@ export default function BlogsPage() {
                         </svg>
                       </a>
                     </nav>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
