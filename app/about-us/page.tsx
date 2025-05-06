@@ -176,7 +176,7 @@ export default function AboutUsPage() {
       <section className="py-16 bg-gray-50" id="our-team">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Meet Our <span className=" text-primary">Leadership</span>
+            Meet The <span className=" text-primary">Team</span>
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (

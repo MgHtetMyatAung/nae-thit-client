@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function DaungMyiSection() {
@@ -31,7 +32,7 @@ export default function DaungMyiSection() {
                 Daung Daung Myi :
               </h4>
               <h2 className=" text-3xl lg:text-5xl font-bold text-primary">
-                Connecting Care, <br /> Anywhere.
+                Feasible for All
               </h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
@@ -114,9 +115,12 @@ export default function DaungMyiSection() {
                 </li>
               </ul>
               <div>
-                <button className="px-8 py-3 border bg-base-ddm border-white text-base font-medium rounded-md text-white hover:bg-base-ddmdark hover:text-white md:py-4 md:text-lg md:px-10 transition duration-300">
+                <Link
+                  href={"viber://contact?number=+959773371118"}
+                  className="px-8 py-3 border bg-base-ddm border-white text-base font-medium rounded-md text-white hover:bg-base-ddmdark hover:text-white md:py-4 md:text-lg md:px-10 transition duration-300"
+                >
                   Book Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>

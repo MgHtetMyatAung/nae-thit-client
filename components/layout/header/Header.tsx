@@ -23,7 +23,7 @@ const navItems = [
     dropdownItems: [
       { name: "About Us", name_mm: "ကျွန်ုပ်တို့အကြောင်း", link: "/about-us" },
       {
-        name: "Our Leadership",
+        name: "Meet The Team",
         name_mm: "အဖွဲ့ဝင်များ",
         link: "/about-us#our-team",
       },

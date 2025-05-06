@@ -12,13 +12,13 @@ const threeKeys = [
     img: "/source/Hepatitis.png",
   },
   {
-    title: "NCD",
+    title: "NCD (Diabetes, Hypertension)",
     description:
       "Ensuring early detection, effective treatment to reduce complications and disability, lifelong management while promoting healthy lifestyles.",
     img: "/source/NCD.png",
   },
   {
-    title: "ANC/MCH",
+    title: "RMNCH",
     description:
       "Ensuring maternal and child health through quality antenatal care, safe deliveries, immunization and postpartum support.",
     img: "/source/ANC_MCH.png",

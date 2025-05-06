@@ -10,18 +10,21 @@ const services = [
     name: "Subscidized Healthcare",
     img: "/source/heath_care.png",
     link: "/our-services",
+    desc: "NTKM trains & empowers non-specialist doctors (e.g., MRCP-holding GPs) to deliver specialist-level care using standardized, evidence-based protocols.",
   },
   {
     id: 2,
     name: "Telehealth",
     img: "/source/teleheath_care.png",
     link: "/our-services",
+    desc: "NTKM trains & empowers non-specialist doctors (e.g., MRCP-holding GPs) to deliver specialist-level care using standardized, evidence-based protocols.",
   },
   {
     id: 3,
-    name: "Specialist trained Specialize Care",
+    name: "Specialized Instead of Specialist",
     img: "/source/special_care.png",
     link: "/our-services",
+    desc: "NTKM trains & empowers non-specialist doctors (e.g., MRCP-holding GPs) to deliver specialist-level care using standardized, evidence-based protocols.",
   },
 ];
 
@@ -62,10 +65,7 @@ export default function HomeServices() {
                 className="mx-auto mb-4 filter group-hover:brightness-[5]"
               />
               <h3 className="font-semibold text-lg">{service.name}</h3>
-              <p className=" group-hover:text-gray-100 mt-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi,
-                adipisci.
-              </p>
+              <p className=" group-hover:text-gray-100 mt-2">{service.desc}</p>
             </div>
           ))}
         </div>

@@ -81,7 +81,7 @@ export default function OurServiceSection() {
           }}
           className="!pb-10"
         >
-          {services.map((f) => (
+          {services.map((f, idx) => (
             <SwiperSlide key={f}>
               <div className="rounded overflow-hidden shadow-lg">
                 <img
@@ -89,7 +89,11 @@ export default function OurServiceSection() {
                   alt={f}
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-4 bg-primary-dark text-white">
+                <div
+                  className={`p-4 ${
+                    idx === 2 ? "bg-green-300" : "bg-primary"
+                  } text-white`}
+                >
                   <h3 className="text-lg font-semibold text-center">{f}</h3>
                 </div>
               </div>

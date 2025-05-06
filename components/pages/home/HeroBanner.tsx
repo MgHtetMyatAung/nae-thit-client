@@ -1,9 +1,11 @@
 "use client";
 import useTranslation from "@/hooks/useTranslation";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function HeroBanner() {
   const { t } = useTranslation();
+  const navigate = useRouter();
   return (
     <section className="relative">
       <div className="absolute inset-0">
@@ -35,7 +37,10 @@ export default function HeroBanner() {
             Myanmar.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
-            <button className="bg-primary-dark text-white hover:bg-accent-orange px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
+            <button
+              onClick={() => navigate.push("/about-us")}
+              className="bg-primary-dark text-white hover:bg-accent-orange px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105"
+            >
               {t("explore_more")}
             </button>
             {/* <button className="px-8 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-secondary md:py-4 md:text-lg md:px-10 transition duration-300">
