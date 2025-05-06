@@ -14,7 +14,7 @@ export default function HeroBanner() {
         />
         <div className="absolute inset-0 bg-secondary opacity-70"></div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="text-center">
           <h1
             className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl drop-shadow-md"
@@ -22,10 +22,17 @@ export default function HeroBanner() {
           >
             Providing Quality Healthcare with Affordable Solutions
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-xl text-white drop-shadow-md">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
-            maxime praesentium Why did the scarecrow win an award? Because he
-            was outstanding in his field. Lorem ipsum
+          <p className="mt-6 mx-auto text-xl text-white drop-shadow-md">
+            Nae Thit Kyan Mar (NTKM) is a pioneering healthcare social
+            enterprise in Myanmar, committed to delivering affordable,
+            comprehensive quality healthcare services through innovative
+            solutions. With a strong focus on Liver Health (Hepatitis B & C,
+            Fatty Liver), NCDs (Hypertension, Diabetes), and RMNCH
+            (Reproductive, Maternal, Newborn, and Child Health), NTKM operates
+            specialist clinics, retail pharmacies, and a molecular-grade medical
+            laboratory. We aim to transform healthcare accessibility with
+            digital integration and provide impactful solutions to the people of
+            Myanmar.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
             <button className="bg-primary-dark text-white hover:bg-accent-orange px-8 py-3 border border-transparent text-base font-medium rounded-md md:py-4 md:text-lg md:px-10 transition duration-300 transform hover:scale-105">
