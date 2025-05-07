@@ -1,6 +1,7 @@
 "use client";
 import { useAboutUsBanner } from "@/hooks/api/about";
 import { useLangStore } from "@/hooks/useLangStore";
+import Image from "next/image";
 import React, { useEffect } from "react";
 
 export default function AboutUsBanner() {
@@ -62,7 +63,15 @@ export default function AboutUsBanner() {
               <p>{data.data.blog.content}</p>
             </div>
           </div>
-          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg"></div>
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg">
+            <Image
+              src={"/imgs/amo.jpg"}
+              alt="background"
+              width={500}
+              height={500}
+              className=" w-full rounded-lg"
+            />
+          </div>
         </div>
       </section>
     </>

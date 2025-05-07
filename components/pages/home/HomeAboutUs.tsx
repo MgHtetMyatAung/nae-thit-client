@@ -27,7 +27,7 @@ export default function HomeAboutUs() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="bg-gray-200 rounded-lg">
             <Image
-              src={"/imgs/background.jpg"}
+              src={"/imgs/hands.jpg"}
               alt="About Us"
               width={800}
               height={600}
@@ -80,7 +80,7 @@ export default function HomeAboutUs() {
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
             <Image
-              src={"/imgs/clinic.jpg"}
+              src={"/imgs/smile.jpg"}
               alt="About Us"
               width={800}
               height={600}

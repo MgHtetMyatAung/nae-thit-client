@@ -11,10 +11,10 @@ export default function HeroBanner() {
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
-          src="/imgs/banner.png"
+          src="/imgs/home_banner.jpg"
           alt="Healthcare background"
         />
-        <div className="absolute inset-0 bg-secondary opacity-70"></div>
+        <div className="absolute inset-0 bg-gray-800 opacity-80"></div>
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="text-center">
@@ -22,7 +22,8 @@ export default function HeroBanner() {
             className="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl drop-shadow-md"
             style={{ lineHeight: "1.2" }}
           >
-            Providing Quality Healthcare with Affordable Solutions
+            Providing <span className=" text-primary">Quality Healthcare</span>{" "}
+            with Affordable Solutions
           </h1>
           <p className="mt-6 mx-auto text-xl text-white drop-shadow-md">
             Nae Thit Kyan Mar (NTKM) is a pioneering healthcare social

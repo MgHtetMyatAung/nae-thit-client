@@ -212,24 +212,34 @@ export default function OurServicesPage() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg"></div>
-          <div className="">
-            <h2 className="text-3xl font-bold mb-2 text-primary leading-10">
-              HOW CAN WE MAKE IT <br />
-              <span className=" text-secondary text-4xl">AFFORDABLE ?</span>
-            </h2>
-            <h3 className=" text-2xl font-semibold mb-3">
-              Balancing <span className=" text-primary">cost-efficiency</span>{" "}
-              with maintaining{" "}
-              <span className=" text-primary">high standards of care</span>
-            </h3>
-            <div className="space-y-6 text-gray-700">
-              <p>
-                High operational costs, limited access to affordable
-                technologies, economic disparities among patients, systemic
-                issues like inadequate healthcare funding, regulatory barriers,
-                and workforce shortages.
-              </p>
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg">
+            <Image
+              src={"/imgs/affordable.jpg"}
+              alt="affordable"
+              width={500}
+              height={600}
+              className=" w-full lg:max-h-[500px] object-cover rounded-lg"
+            />
+          </div>
+          <div className=" flex">
+            <div className=" my-auto h-fit">
+              <h2 className="text-3xl font-bold mb-2 text-primary leading-10">
+                HOW CAN WE MAKE IT <br />
+                <span className=" text-secondary text-4xl">AFFORDABLE ?</span>
+              </h2>
+              <h3 className=" text-2xl font-semibold mb-3">
+                Balancing <span className=" text-primary">cost-efficiency</span>{" "}
+                with maintaining{" "}
+                <span className=" text-primary">high standards of care</span>
+              </h3>
+              <div className="space-y-6 text-gray-700">
+                <p>
+                  High operational costs, limited access to affordable
+                  technologies, economic disparities among patients, systemic
+                  issues like inadequate healthcare funding, regulatory
+                  barriers, and workforce shortages.
+                </p>
+              </div>
             </div>
           </div>
         </div>
