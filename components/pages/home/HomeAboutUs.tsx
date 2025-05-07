@@ -80,7 +80,7 @@ export default function HomeAboutUs() {
           </div>
           <div className="bg-gray-300 rounded-lg order-1 md:order-2">
             <Image
-              src={"/imgs/smile.jpg"}
+              src={"/imgs/reason_smile.jpg"}
               alt="About Us"
               width={800}
               height={600}

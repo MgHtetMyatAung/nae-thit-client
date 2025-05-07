@@ -29,7 +29,7 @@ export default function AboutUsPage() {
     {
       name: "Dr. Win Naing",
       role: "Medical Officer",
-      image: "/profile/dr_win.jpg",
+      image: "/profile/dr_win.png",
       bio: "David ensures financial transparency and maximizes donor impact.",
     },
   ];

@@ -11,7 +11,7 @@ export default function HeroBanner() {
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
-          src="/imgs/home_banner.jpg"
+          src="/imgs/banner.jpg"
           alt="Healthcare background"
         />
         <div className="absolute inset-0 bg-gray-800 opacity-80"></div>
@@ -32,10 +32,9 @@ export default function HeroBanner() {
             solutions. With a strong focus on Liver Health (Hepatitis B & C,
             Fatty Liver), NCDs (Hypertension, Diabetes), and RMNCH
             (Reproductive, Maternal, Newborn, and Child Health), NTKM operates
-            specialist clinics, retail pharmacies, and a molecular-grade medical
-            laboratory. We aim to transform healthcare accessibility with
-            digital integration and provide impactful solutions to the people of
-            Myanmar.
+            specialist clinics and retail pharmacies. We aim to transform
+            healthcare accessibility with digital integration and provide
+            impactful solutions to the people of Myanmar.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
             <button

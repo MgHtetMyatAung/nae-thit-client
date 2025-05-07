@@ -79,7 +79,7 @@ export default function FacilitiesSlider() {
                     <img
                       src={global_config.base_url + `${f.photo}`}
                       alt={f.clinicname}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-64 object-cover"
                     />
                     <div className="p-4">
                       <h3 className="text-lg font-semibold">{f.clinicname}</h3>

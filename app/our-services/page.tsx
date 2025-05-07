@@ -190,23 +190,33 @@ export default function OurServicesPage() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className=" order-2 lg:order-1">
-            <h2 className="text-3xl font-bold mb-6">
-              Specialist trained{" "}
-              <span className=" text-primary">Specialized Care</span>
-            </h2>
-            <div className="space-y-6  text-gray-700">
-              <p>
-                In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise
-                was established and provides quality healthcare services to the
-                community by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar is a
-                chain of clinics that fill the gap in the health services needed
-                in the community by giving quality healthcare services at
-                subsidized prices in innovative ways. We provide quality
-              </p>
+          <div className=" order-2 lg:order-1 flex">
+            <div className=" my-auto">
+              <h2 className="text-3xl font-bold mb-6">
+                Specialist trained{" "}
+                <span className=" text-primary">Specialized Care</span>
+              </h2>
+              <div className="space-y-6  text-gray-700">
+                <p>
+                  In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise
+                  was established and provides quality healthcare services to
+                  the community by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar
+                  is a chain of clinics that fill the gap in the health services
+                  needed in the community by giving quality healthcare services
+                  at subsidized prices in innovative ways. We provide quality
+                </p>
+              </div>
             </div>
           </div>
-          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg order-1 lg:order-2"></div>
+          <div className=" min-h-[200px] lg:h-auto bg-gray-200 rounded-lg order-1 lg:order-2">
+            <Image
+              src={"/imgs/special.jpg"}
+              alt="special"
+              width={500}
+              height={500}
+              className=" w-full h-auto rounded-lg"
+            />
+          </div>
         </div>
       </section>
 

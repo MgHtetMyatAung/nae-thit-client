@@ -10,7 +10,7 @@ const services = [
     name: "Subscidized Healthcare",
     img: "/source/heath_care.png",
     link: "/our-services",
-    desc: "We provide subsidized healthcare through creating affordable subscription models designed to ease the cost burden of long-term care. Our programs support maternal and child health, reproductive health services, chronic diseases management, and general outpatient services, ensuring equitable access for patients in need.",
+    desc: "We provide subsidized healthcare through creating affordable subscription models designed to ease the cost burden of long-term care.",
   },
   {
     id: 2,
