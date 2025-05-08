@@ -193,17 +193,18 @@ export default function OurServicesPage() {
           <div className=" order-2 lg:order-1 flex">
             <div className=" my-auto">
               <h2 className="text-3xl font-bold mb-6">
-                Specialist trained{" "}
-                <span className=" text-primary">Specialized Care</span>
+                Specialized instead of{" "}
+                <span className=" text-primary">Specialists</span>
               </h2>
               <div className="space-y-6  text-gray-700">
                 <p>
-                  In 2022, Nae Thit Co., Ltd. By Guarantee, a social enterprise
-                  was established and provides quality healthcare services to
-                  the community by forming Nae Thit Kyan Mar. Nae Thit Kyan Mar
-                  is a chain of clinics that fill the gap in the health services
-                  needed in the community by giving quality healthcare services
-                  at subsidized prices in innovative ways. We provide quality
+                  While non-profits have long focused on primary healthcare
+                  (PHC), Myanmar’s evolving crisis has outpaced this model:
+                  Worsening economic inequality pushes more people into
+                  self-treatment via informal pharmacies, where unregistered,
+                  low-quality medications dominate. Decreased affordability of
+                  specialist visits has led to lower compliance and more
+                  complications.
                 </p>
               </div>
             </div>

@@ -24,7 +24,7 @@ export default function DaungMyiSection() {
       </div>
       <div className=" xl:absolute w-full h-full top-0 left-0 ">
         <div className="container h-full grid grid-cols-1 xl:grid-cols-2">
-          <div className=" flex flex-col justify-between xl:pb-[60px]">
+          <div className=" flex flex-col justify-between">
             <div>
               <Image
                 src={"/source/ddm_logo.png"}
@@ -42,10 +42,17 @@ export default function DaungMyiSection() {
                 Feasible for All
               </h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                neque nihil pariatur nemo nisi soluta excepturi consectetur
-                adipisicing elit. Iste neque nihil pariatur nemo nisi soluta
-                excepturi. Labore esse in fugiat!
+                Our D.D.M telehealth platform delivers accessible, convenient,
+                and high-quality virtual healthcare to communities, with a
+                particular focus on supporting individuals managing chronic
+                diseases. No app downloads are required—patients can connect
+                seamlessly with licensed and certified professionals, receive
+                accurate e-prescriptions, and access reliable care , anywhere.
+                Complementing this, we offer tailored virtual care experiences
+                guided by dedicated Patient Journey Partners (PJPs), ensuring a
+                smooth, connected continuum of care. Accessible even without
+                internet—via the Viber platform—our solution removes traditional
+                barriers to care.
               </p>
               <ul className=" space-y-3">
                 <li>
