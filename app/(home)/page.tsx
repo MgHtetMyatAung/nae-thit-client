@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Statistics */}
       <section className="bg-primary py-6 ">
-        <div className=" container flex justify-between text-white text-center">
+        <div className=" container flex flex-col md:flex-row justify-between text-white text-center gap-5">
           <div>
             <p className="text-2xl font-bold">4</p>
             <p className="text-sm">Years of Service</p>
