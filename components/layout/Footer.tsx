@@ -23,7 +23,7 @@ export default function Footer() {
       links: [
         { title: "Subscidized Healthcare" },
         { title: "Telehealth" },
-        { title: "Specialist trained Specialize Care" },
+        { title: "Specialized Instead of Specialist" },
       ],
     },
     {
