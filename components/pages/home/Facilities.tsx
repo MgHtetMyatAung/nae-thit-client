@@ -84,6 +84,9 @@ export default function FacilitiesSlider() {
                     <div className="p-4">
                       <h3 className="text-lg font-semibold">{f.clinicname}</h3>
                       <p className="text-sm text-gray-500">
+                        <span className="text-black"> {f.address}</span>
+                      </p>
+                      <p className="text-sm text-gray-500">
                         Opening Hours: {f.openinghr}
                       </p>
                     </div>
@@ -117,6 +120,9 @@ export default function FacilitiesSlider() {
                 <h3 className="text-lg font-semibold">
                   {activeFacilities.clinicname}
                 </h3>
+                <p className="text-sm text-gray-500">
+                  Address: {activeFacilities.address}
+                </p>
                 <p className="text-sm text-gray-500">
                   Opening Hours: {activeFacilities.openinghr}
                 </p>
