@@ -1,9 +1,13 @@
+"use client";
 import { social_links } from "@/constant/data";
+import { useCreateMessage } from "@/hooks/api/request";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 export default function ContactUsPage() {
+  const { mutate, isPending, isSuccess } = useCreateMessage();
   const contactMethods = [
     {
       icon: (
@@ -100,6 +104,28 @@ export default function ContactUsPage() {
     },
   ];
 
+  const { register, handleSubmit, reset } = useForm<CreateMessagePayload>();
+
+  const requestMsg = async (data: CreateMessagePayload) => {
+    try {
+      await mutate(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset({
+        sendername: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    }
+  }, [isSuccess]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -172,32 +198,20 @@ export default function ContactUsPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
                 Send Us a Message
               </h2>
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+              <form className="space-y-6" onSubmit={handleSubmit(requestMsg)}>
+                <div className="grid gap-6">
                   <div>
                     <label
                       htmlFor="first-name"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      First Name
+                      Full Name
                     </label>
                     <input
                       type="text"
                       id="first-name"
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="last-name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="last-name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      {...register("sendername", { required: true })}
                     />
                   </div>
                 </div>
@@ -213,6 +227,7 @@ export default function ContactUsPage() {
                     type="email"
                     id="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    {...register("email", { required: true })}
                   />
                 </div>
 
@@ -227,6 +242,7 @@ export default function ContactUsPage() {
                     type="tel"
                     id="phone"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    {...register("phone", { required: true })}
                   />
                 </div>
 
@@ -237,16 +253,12 @@ export default function ContactUsPage() {
                   >
                     Subject
                   </label>
-                  <select
+                  <input
+                    type="text"
                     id="subject"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    <option>General Inquiry</option>
-                    <option>Donation Question</option>
-                    <option>Volunteer Opportunity</option>
-                    <option>Partnership Inquiry</option>
-                    <option>Other</option>
-                  </select>
+                    {...register("subject", { required: true })}
+                  />
                 </div>
 
                 <div>
@@ -260,6 +272,7 @@ export default function ContactUsPage() {
                     id="message"
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    {...register("message", { required: true })}
                   ></textarea>
                 </div>
 
@@ -267,6 +280,7 @@ export default function ContactUsPage() {
                   <button
                     type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-medium transition-colors"
+                    disabled={isPending}
                   >
                     Send Message
                   </button>

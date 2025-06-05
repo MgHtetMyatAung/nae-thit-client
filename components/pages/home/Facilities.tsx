@@ -108,7 +108,7 @@ export default function FacilitiesSlider() {
                 <X size={20} color="white" />
               </button>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.202361019662!2d96.2548748!3d16.865881299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c18d00231b55bb%3A0xe58f4045a74b5e72!2z4YCU4YCx4YC34YCe4YCF4YC64YCA4YC74YCU4YC64YC44YCZ4YCs4YCh4YCR4YCw4YC44YCA4YCv4YCG4YCx4YC44YCB4YCU4YC64YC4LeGBgyAoTmFlIFRoaXQgS3lhbm4gTWFyIFNwZWNpYWxpc3QgQ2xpbmljIDMp!5e0!3m2!1sen!2smm!4v1746555462956!5m2!1sen!2smm"
+                src={activeFacilities.mapurl}
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

@@ -4,7 +4,8 @@ type TypeOfFacilities = {
   openinghr: string;
   location: string;
   photo: string;
-  address:string
+  address: string;
+  mapurl: string;
 };
 
 type TypeOfFacilitiesData = {
